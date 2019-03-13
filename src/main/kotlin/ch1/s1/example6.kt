@@ -9,7 +9,9 @@ fun main() {
         println("loop")
     }
 
+    // '\n' inside a string prints an empty line
     println("\n2:")
+
     // You always can use a variable instead of constant
     val amountOfLoops = 3
     repeat(amountOfLoops) {
