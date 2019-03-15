@@ -1,15 +1,32 @@
 package ch1.s2
-/*
-fun main() {
-    for (n in 1 .. 10) {
-        // When use nested 'if' better use {}
-        // because 'else' belongs to the last 'if'. And it maybe not what you expect.
-        if(n % 2 == 0)
-            if(n > 5)
-                println("$n - even")
 
-            else
-                println("$n - odd")
-    }
+
+fun main() {
+    // Try to assign different numbers to 'n' and check how all these 'if' behave
+    val n = 4
+
+    // You can say you want n < 10 AND n % 2 == 0
+    // '&&' means AND
+    // '||' means OR.
+    // Such operators called "logical operators"
+    if(n < 10 && n % 2 == 0)
+        println("$n is even and less then 10")
+
+    // Comparsion operators: '<', '>', '<=', '>=', '==' and '!='
+
+    if(n <= 10)
+        println("$n is less then 10 or equal to 10")
+
+    if(n == 10)
+        println("$n is exactly 10")
+
+    if(n != 10)
+        println("$n is not 10")
+
+    // Examples with comparsion and logical operators together
+    if(n >= 3 && n <= 7)
+        println("$n is inside rage 3 .. 7. Including 3 and 7")
+
+    if(n < 3 || n > 7)
+        println("$n is outside rage 3 .. 7. Including 3 and 7")
 }
-*/
