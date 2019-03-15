@@ -5,11 +5,18 @@ fun main() {
         print("n=$n - ")
 
         // operator '%' calculates division remainder
+        // If takes a condition to test.
+        // In this case condition is: n % 2 == 0
         if(n % 2 == 0) {
+            // This will be executed only if n % 2 equals 0
             println("even")
         }
         else {
-            println("odd")
+            // Otherwise this block will be executed
+            print("odd")
+
+            // {} block can contain any number of lines
+            println("!")
         }
     }
 }
