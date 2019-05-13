@@ -22,6 +22,4 @@ fun main() {
   // n++ does the same as n = n + 1
   n ++
   println("5: $n")
-
-  // Read about keywords 'val' and 'var'. Read about arithmetic operators in Kotlin.
 }

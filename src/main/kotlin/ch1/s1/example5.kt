@@ -8,6 +8,7 @@ fun main() {
     var n = 0
 
     // 'while' takes a condition and repeats {} block while the condition is true
+    // Here condition is "n < amountOfLoops"
     while(n < amountOfLoops) {
         println("loop $n")
 

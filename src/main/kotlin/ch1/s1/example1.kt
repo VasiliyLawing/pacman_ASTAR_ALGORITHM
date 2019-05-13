@@ -2,7 +2,7 @@ package ch1.s1
 
 
 /*
- All our examples will have such standard template:
+ All our examples will have such a standard template:
  package <chapter>.<section>
 
  fun main() {
@@ -19,12 +19,12 @@ fun main() {
     Kotlin just ignore your comments.
   */
 
-  // use println to print something on console
+  // use "println" to print something on console
   // string should be in double quotes
 
   println("Hello")
 
-  // Check out chengas if you uncomment this line and comment you the previous println line.
+  // If you uncomment this line and comment you the previous println line.
   // Find out what the difference between prinln() and print()
   //print("Hello")
 
