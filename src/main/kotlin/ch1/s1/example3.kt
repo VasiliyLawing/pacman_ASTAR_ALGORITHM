@@ -4,7 +4,7 @@ package ch1.s1
 fun main() {
   // Use keyword 'val' to define named values. A value maybe a result of some expression.
   // You can use these names in other expressions
-  // named values like these called "immutable variables".
+  // named values like these are also called "immutable variables".
   // Numbers without "." are integer numbers.
   // Numbers with "." are floating point numbers.
 
