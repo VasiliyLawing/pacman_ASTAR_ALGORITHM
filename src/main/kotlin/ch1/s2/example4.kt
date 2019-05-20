@@ -1,5 +1,6 @@
 package ch1.s2
 
+
 fun main() {
     val n = 3
 
@@ -23,7 +24,7 @@ fun main() {
         println("$n >= 10")
 
     /*
-      Notice that if n = 4 you won't notice a bug.
+      Notice that if you change line 4 to "n = 4" you won't notice a bug.
       This is why it is much easier to write good code than to look for a bug in a bad one.
     */
 }
