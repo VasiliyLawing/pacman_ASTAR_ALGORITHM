@@ -19,5 +19,5 @@ fun main() {
         println(n)
 
     // Notice you have two absolutely separate variables with the same name 'n'.
-    // Each of them exists only inside its 'for' loop {} block.
+    // Each of them exists only inside its 'for' loop {} block. It called - scope of the variable.
 }
