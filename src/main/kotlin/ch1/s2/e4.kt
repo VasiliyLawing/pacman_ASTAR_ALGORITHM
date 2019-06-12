@@ -1,9 +1,11 @@
 package ch1.s2
 
+
+import kotlin.math.roundToInt
+
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
-import kotlin.math.roundToInt
 
 
 fun main() {
