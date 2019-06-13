@@ -13,6 +13,8 @@ fun main() {
 
     val particleWidth = 10
     val initialParticleHeight = 2
+
+    // Try to change acceleration to -0.03
     val acceleration = -0.02
 
     var growK = 1.0

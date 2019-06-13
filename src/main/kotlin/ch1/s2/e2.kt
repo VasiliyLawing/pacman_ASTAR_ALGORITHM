@@ -10,6 +10,9 @@ fun main() {
 
     val y = wnd.innerHeight/2
 
+    // Now we use loop "for" which allows to write simpler and cleaner code
+    // "for" creates variable "x"
+    // Google "kotlin loop for", "Kotlin int range"
     for (x in 0 .. wnd.innerWidth) {
         val gc = Graphics(wnd)
 

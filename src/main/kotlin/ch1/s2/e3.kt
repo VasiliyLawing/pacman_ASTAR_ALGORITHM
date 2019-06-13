@@ -8,6 +8,10 @@ import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
 
 
+/*
+Using more variables to create add more dynamic to our example
+*/
+
 fun main() {
     val wnd = Window(1920, 1080, buffered = true)
 
