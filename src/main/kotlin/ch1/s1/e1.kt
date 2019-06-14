@@ -27,7 +27,7 @@ fun main() {
 
     // If you uncomment this line and comment you the previous println line.
     // Find out what the difference between println() and print()
-    print("Hello2")
+    // print("Hello2")
 
     println("Something else")
 }

@@ -9,7 +9,7 @@ import com.anysolo.toyGraphics.sleep
 
 
 /*
-Using more variables to create add more dynamic to our example
+Using more variables to add more dynamic to our example
 */
 
 fun main() {
@@ -17,6 +17,8 @@ fun main() {
 
     val particleWidth = 10
     val initialParticleHeight = 5
+
+    // we use Double type for more precise calculation
     var growK = 1.0
 
     for (x in 0 .. wnd.innerWidth - particleWidth - 1) {
@@ -27,7 +29,10 @@ fun main() {
 
         gc.clear()
 
+        // Windows coordinates are integer numbers (Int type).
+        // So after we calculate new particleHeight we round the Double into an Int.
         val particleHeight = (initialParticleHeight * growK).roundToInt()
+
         gc.drawRect(x, wnd.innerHeight/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
