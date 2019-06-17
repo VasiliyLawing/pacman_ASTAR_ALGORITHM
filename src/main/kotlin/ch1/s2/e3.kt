@@ -18,6 +18,8 @@ fun main() {
 
     val particleWidth = 10
     val initialParticleHeight = 5
+
+    // we use Double type for more precise calculation
     var growK = 1.0
 
     for (x in 0 .. wnd.innerWidth - particleWidth - 1) {
@@ -32,6 +34,7 @@ fun main() {
         // The result of initialParticleHeight * growK is a Double value.
         // Coordinates are Int, so we call Double.rountToInt function to make the conversion.
         val particleHeight = (initialParticleHeight * growK).roundToInt()
+
         gc.drawRect(x, wnd.innerHeight/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
