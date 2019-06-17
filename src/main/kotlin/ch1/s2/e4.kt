@@ -7,8 +7,9 @@ import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
 
+
 // Here we introduce acceleration in motion of your object.
-// You can google something like "acceleration speed" if you do not know what acceleration is.
+// You can google something like "velocity & acceleration" if you do not know what acceleration is.
 
 fun main() {
     val wnd = Window(1920, 1080, buffered = true)
@@ -37,7 +38,7 @@ fun main() {
 
         gc.close()
 
-        // Speep for 33 milliseconds gives something about 30 frames per second.
+        // Sleep for 33 milliseconds gives something about 30 frames per second.
         sleep(33)
 
         x += speed

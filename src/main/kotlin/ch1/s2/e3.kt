@@ -1,6 +1,8 @@
 package ch1.s2
 
 
+// We have to import roundToInt before we can use it.
+// But if you comment this line out you see IDEA offer you to insert this import automatically
 import kotlin.math.roundToInt
 
 import com.anysolo.toyGraphics.Graphics
