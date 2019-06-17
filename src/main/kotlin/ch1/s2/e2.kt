@@ -26,4 +26,9 @@ fun main() {
 
         gc.close()
     }
+
+    // Try to uncomment the next line
+    // println(x)
+    // Kotlin shows the error, because variable "x" visible only inside the loop.
+    // When you define a name, like value or variable, it visible only inside "{}" enclosing the block of code.
 }

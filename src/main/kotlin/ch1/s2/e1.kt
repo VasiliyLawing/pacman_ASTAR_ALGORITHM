@@ -8,25 +8,27 @@ import com.anysolo.toyGraphics.sleep
 
 
 fun main() {
-    // Window in buffered mode. Read about double buffering graphics
-    // In buffered mode all you draw will be kept in a buffer until you call function "close"
-    // from Graphics object.
+    // Now we use Window in buffered mode.
+    // In buffered mode all you draw will be kept in a buffer until you call function "close" from Graphics class.
+    // Read about double buffering in computer graphics.
     val wnd = Window(1920, 1080, buffered = true)
 
     val y = wnd.innerHeight/2
 
-    // define a variable "x"
-    // variable is is like a value except you can reassign a different value any time
-    // You variable only if you need to reassign the value. If you not sure, always try to use values
+    // Define a variable "x"
+    // Variable is is like a value except you can reassign it a different value any time.
+    // You use variable ("var") only if you need to reassign the value.
+    // If you are not sure, always try to use values ("val").
     var x = 0
 
     // Loop in programming repeats a block of code.
-    // Here we use loop "while"
+    // Kotlin provides many ways to make a loop. Here we use "while"
 
-    // Loop redrawing frames, waiting 5 milliseconds and repeat it again
-    // Loop stops if x becomes less than inner width of the window
+    // Loop redraws the frame, waiting 5 milliseconds and repeat it again
+    // Usually a loop has some condition to decide when it stops.
+    // Here the loop stops if "x" becomes less than inner width of the window
     while(x < wnd.innerWidth) {
-        // We have to create new Graphics object before drawing each frame
+        // In buffered window, we have to create new Graphics object before drawing each frame
         val gc = Graphics(wnd)
 
         // setting width and color of the line
@@ -45,6 +47,10 @@ fun main() {
         // The best way would be to write here
         // x++ instead of x = x + 1
 
+        // Program will sleep for 5 milliseconds.
+        // We need it to give our eyes some time to see the image.
+        // It also reduces CPU usage and power consumption.
+        // Google "computer CPU" if you do not know what it is.
         sleep(5)
 
         // You have to "close" Graphic object to see what you drawn on the window

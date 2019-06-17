@@ -9,7 +9,8 @@ import com.anysolo.toyGraphics.sleep
 
 
 /*
-Using more variables to create add more dynamic to our example
+Here we use more variables to add more dynamic to our example. Read the code carefully.
+Understand what happens here. Debug it if you need it to understand how it works.
 */
 
 fun main() {
@@ -27,6 +28,9 @@ fun main() {
 
         gc.clear()
 
+        // The next arithmetic expression uses Double variable "growK"
+        // The result of initialParticleHeight * growK is a Double value.
+        // Coordinates are Int, so we call Double.rountToInt function to make the conversion.
         val particleHeight = (initialParticleHeight * growK).roundToInt()
         gc.drawRect(x, wnd.innerHeight/2 - particleHeight/2, particleWidth, particleHeight)
 
