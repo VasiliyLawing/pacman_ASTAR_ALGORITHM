@@ -47,13 +47,13 @@ fun main() {
         // The best way would be to write here
         // x++ instead of x = x + 1
 
+        // You have to "close" Graphic object to see what you drawn on the window
+        gc.close()
+
         // Program will sleep for 5 milliseconds.
         // We need it to give our eyes some time to see the image.
         // It also reduces CPU usage and power consumption.
         // Google "computer CPU" if you do not know what it is.
         sleep(5)
-
-        // You have to "close" Graphic object to see what you drawn on the window
-        gc.close()
     }
 }
