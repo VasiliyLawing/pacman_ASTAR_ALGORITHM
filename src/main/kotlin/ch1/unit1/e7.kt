@@ -1,4 +1,4 @@
-package ch1.s1
+package ch1.unit1
 
 
 import com.anysolo.toyGraphics.Graphics

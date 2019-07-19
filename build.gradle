@@ -23,7 +23,15 @@ repositories {
     mavenCentral()
 
     maven {
-        url  "https://dl.bintray.com/anysolo/edu"
+        url "https://dl.bintray.com/anysolo/edu"
+    }
+
+    maven {
+        url "http://repo.anysolo.com:8081/artifactory/gradle-dev-local/"
+        credentials {
+            username = "${artifactory_username}"
+            password = "${artifactory_password}"
+        }
     }
 }
 
@@ -34,6 +42,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
-    compile files ('../toyGraphics/build/libs/toyGraphics-0.4.9.jar')
+    compile files ('../toyGraphics/build/libs/toyGraphics-0.4.16.jar')
     //compile "com.anysolo:toyGraphics:0.4.9"
+
+    compile "com.anysolo.edu:prg-b1-solutions:0.3.3"
+//    compile files ('../prg-b1-solutions/build/libs/prg-b1-solutions-0.3.1.jar')
 }

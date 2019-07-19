@@ -1,4 +1,4 @@
-package ch1.s1
+package ch1.unit1
 
 /*
     An arithmetic expression executes mathematical calculation. The result of

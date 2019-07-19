@@ -1,9 +1,7 @@
-package ch1.s3
+package ch1.unit3
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Window
-
-// Import sleep function
 import com.anysolo.toyGraphics.sleep
 
 
@@ -11,13 +9,11 @@ fun main() {
     val wnd = Window(1920, 1080, buffered = true)
 
     val y = wnd.innerHeight/2
-    var x = 1
-    var speed =1
+    var x = 0
 
     while(true) {
         val gc = Graphics(wnd)
 
-        // setting width and color of the line
         gc.setStroke(3.0)
         gc.setColor(1)
 
@@ -26,10 +22,13 @@ fun main() {
 
         gc.close()
 
-        if(x == 0 || x == wnd.innerWidth)
-            speed = -speed
-
-        x += speed
+        // Loop the motion
+        // "if" here executes only one of two lines of code.
+        // If the given condition is true it executes the first line otherwise the second one.
+        if(x < wnd.innerWidth)
+            x ++ // Kotlin executes this line of code if x is less than wnd.innerWidth
+        else
+            x = 0 // Otherwise Kotlin executes this line
 
         sleep(5)
     }

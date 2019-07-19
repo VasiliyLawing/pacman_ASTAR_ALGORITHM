@@ -5,7 +5,7 @@ package ch1.s1
 // In our program we get them in "args" value
 
 // Start this program with some arguments
-// For example java prog1.ch1.s2.examples.Example8Kt 111 222
+// For example java prog1.ch1.unit2.examples.Example8Kt 111 222
 fun main() {
   // we use operator + to concatenate string with number
   println("Number of arguments: " + args.size)

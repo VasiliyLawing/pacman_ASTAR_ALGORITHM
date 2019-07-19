@@ -1,9 +1,9 @@
-package ch1.s3
-
+package ch1.unit3
 
 import com.anysolo.toyGraphics.Graphics
-import com.anysolo.toyGraphics.Keyboard
 import com.anysolo.toyGraphics.Window
+
+// Import sleep function
 import com.anysolo.toyGraphics.sleep
 
 
@@ -12,21 +12,11 @@ fun main() {
 
     val y = wnd.innerHeight/2
     var x = 1
-    var speed = 1
-
-    val keyboard = Keyboard(wnd)
+    var speed =1
 
     while(true) {
-        val key = keyboard.getPressedKey()
-
-        if(key != null) {
-            if (key.code == 'Q'.toInt())
-                break
-        }
-
         val gc = Graphics(wnd)
 
-        // setting width and color of the line
         gc.setStroke(3.0)
         gc.setColor(1)
 
@@ -35,6 +25,7 @@ fun main() {
 
         gc.close()
 
+        // Here we use "if" without "else". It either executes one given line of code or nothing.
         if(x == 0 || x == wnd.innerWidth)
             speed = -speed
 
@@ -42,8 +33,4 @@ fun main() {
 
         sleep(5)
     }
-
-    println("The End")
-    wnd.close()
-
 }

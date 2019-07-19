@@ -1,4 +1,4 @@
-package ch1.s1
+package ch1.unit1
 
 
 // To use something not built-in in Kotlin we should import it

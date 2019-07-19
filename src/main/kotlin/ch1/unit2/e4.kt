@@ -1,4 +1,4 @@
-package ch1.s2
+package ch1.unit2
 
 
 import kotlin.math.roundToInt

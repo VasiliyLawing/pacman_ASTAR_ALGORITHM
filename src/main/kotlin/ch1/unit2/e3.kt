@@ -1,4 +1,4 @@
-package ch1.s2
+package ch1.unit2
 
 
 // We have to import roundToInt before we can use it.
