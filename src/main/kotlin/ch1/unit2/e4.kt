@@ -4,6 +4,7 @@ package ch1.unit2
 import kotlin.math.roundToInt
 
 import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
 
@@ -25,16 +26,16 @@ fun main() {
     var x = 0.0
     var growKStep = 0.7
 
-    while (x < wnd.innerWidth - particleWidth) {
+    while (x < wnd.width - particleWidth) {
         val gc = Graphics(wnd)
 
-        gc.setStroke(3.0)
-        gc.setColor(1)
+        gc.setStrokeWidth(3)
+        gc.color = Pal16.blue
 
         gc.clear()
 
         val particleHeight = (initialParticleHeight * growK).roundToInt()
-        gc.drawRect(x.roundToInt(), wnd.innerHeight/2 - particleHeight/2, particleWidth, particleHeight)
+        gc.drawRect(x.roundToInt(), wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
 

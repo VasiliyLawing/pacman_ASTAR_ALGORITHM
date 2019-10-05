@@ -4,8 +4,9 @@ package ch1.unit1
 // To use something not built-in in Kotlin we should import it
 // In this example we use two classes defined in a library called "toyGraphics".
 
-// We import classes Graphic and Window
+// We import classes Graphic, Window and Pal16
 import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
 
 
@@ -40,28 +41,22 @@ fun main() {
 
      Below you can see we use function setColor and values innerWidth and innerHeight.
 
-     Function setColor exists inside class Graphics.
-     Values innerWidth and innerHeight exist inside class Window.
+     Value 'color' exists inside any objects of class Graphics.
+     Values 'innerWidth' and 'innerHeight' exist inside any object of class Window.
 
-     Any object of a class contains everything its class contains. Class is like a template for creation of objects.
-
-     You can access something inside class using dor notation like you can see below.
+     You can access something inside object using dor notation like you can see below.
 
      If you write name of the object, for example "wnd", then "." and just wait for couple seconds, IDEA shows you
      everything you can use inside that object. Try it.
-
-     wnd.innerWidth and wnd.innerHeight contain width and height of the
-     inner window area. Inner area does not include window title. This is space available
-     for your drawings.
     */
 
     // Set width of the lines we draw.
-    gc.setStroke(3.0)
+    gc.setStrokeWidth(3)
 
-    // You can use colors from simple VGA palette like Int numbers 0 .. 15
-    gc.setColor(1)
-    gc.drawLine(0, 0, wnd.innerWidth-1, wnd.innerHeight)
+    // You can use colors from simple VGA palette Pal16 like this
+    gc.color = Pal16.blue
+    gc.drawLine(0, 0, wnd.width-1, wnd.height)
 
-    gc.setColor(4)
-    gc.drawLine(0, wnd.innerHeight-1, wnd.innerWidth-1, 0)
+    gc.color = Pal16.red
+    gc.drawLine(0, wnd.height-1, wnd.width-1, 0)
 }

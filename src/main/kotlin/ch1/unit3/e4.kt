@@ -8,8 +8,8 @@ import com.anysolo.toyGraphics.*
 fun main() {
     val wnd = Window(1920, 1080, buffered = true)
 
-    val y = wnd.innerHeight/2
-    var x = wnd.innerWidth/2
+    val y = wnd.height/2
+    var x = wnd.width/2
     var speed = 0
 
     val keyboard = Keyboard(wnd)
@@ -35,8 +35,8 @@ fun main() {
 
         val gc = Graphics(wnd)
 
-        gc.setStroke(3.0)
-        gc.setColor(1)
+        gc.setStrokeWidth(3)
+        gc.color = Pal16.blue
 
         gc.clear()
         gc.drawRect(x, y, 50, 10)
@@ -47,9 +47,9 @@ fun main() {
 
         // Loop the motion in both directions
         if(x < 0)
-            x = wnd.innerWidth - 1
+            x = wnd.width - 1
 
-        else if (x >= wnd.innerWidth)
+        else if (x >= wnd.width)
             x = 0
 
         sleep(5)

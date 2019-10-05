@@ -10,8 +10,8 @@ fun main() {
 
     val rocketWidth = 50
     val rocketHeight = 10
-    val y = wnd.innerHeight - 20
-    var x = wnd.innerWidth/2
+    val y = wnd.height - 20
+    var x = wnd.width/2
     var speed = 0
     var needToExit = false
 
@@ -48,8 +48,8 @@ fun main() {
 
         val gc = Graphics(wnd)
 
-        gc.setStroke(3.0)
-        gc.setColor(1)
+        gc.setStrokeWidth(3)
+        gc.color = Pal16.blue
 
         gc.clear()
         gc.drawRect(x, y, rocketWidth, rocketHeight)
@@ -67,9 +67,9 @@ fun main() {
         x += speed
 
         if(x < 0)
-            x = wnd.innerWidth - 1
+            x = wnd.width - 1
 
-        else if (x >= wnd.innerWidth)
+        else if (x >= wnd.width)
             x = 0
 
         sleep(10)

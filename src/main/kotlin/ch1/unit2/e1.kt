@@ -1,6 +1,7 @@
 package ch1.unit2
 
 import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
 
 // Import sleep function
@@ -13,7 +14,7 @@ fun main() {
     // Read about double buffering in computer graphics.
     val wnd = Window(1920, 1080, buffered = true)
 
-    val y = wnd.innerHeight/2
+    val y = wnd.height/2
 
     // Define a variable "x"
     // Variable is is like a value except you can reassign it a different value any time.
@@ -27,13 +28,13 @@ fun main() {
     // Loop redraws the frame, waiting 5 milliseconds and repeat it again
     // Usually a loop has some condition to decide when it stops.
     // Here the loop stops if "x" becomes less than inner width of the window
-    while(x < wnd.innerWidth) {
+    while(x < wnd.width) {
         // In buffered window, we have to create new Graphics object before drawing each frame
         val gc = Graphics(wnd)
 
         // setting width and color of the line
-        gc.setStroke(3.0)
-        gc.setColor(1)
+        gc.setStrokeWidth(3)
+        gc.color = Pal16.blue
 
         gc.clear()
         gc.drawRect(x, y, 50, 10)

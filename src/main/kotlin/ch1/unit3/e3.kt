@@ -1,16 +1,13 @@
 package ch1.unit3
 
 
-import com.anysolo.toyGraphics.Graphics
-import com.anysolo.toyGraphics.Keyboard
-import com.anysolo.toyGraphics.Window
-import com.anysolo.toyGraphics.sleep
+import com.anysolo.toyGraphics.*
 
 
 fun main() {
     val wnd = Window(1920, 1080, buffered = true)
 
-    val y = wnd.innerHeight/2
+    val y = wnd.height/2
     var x = 1
     var speed = 1
 
@@ -37,15 +34,15 @@ fun main() {
 
         val gc = Graphics(wnd)
 
-        gc.setStroke(3.0)
-        gc.setColor(1)
+        gc.setStrokeWidth(3)
+        gc.color = Pal16.blue
 
         gc.clear()
         gc.drawRect(x, y, 50, 10)
 
         gc.close()
 
-        if(x == 0 || x == wnd.innerWidth)
+        if(x == 0 || x == wnd.width)
             speed = -speed
 
         x += speed

@@ -6,6 +6,7 @@ package ch1.unit2
 import kotlin.math.roundToInt
 
 import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
 
@@ -24,11 +25,11 @@ fun main() {
     // we use Double type for more precise calculation
     var growK = 1.0
 
-    for (x in 0 .. wnd.innerWidth - particleWidth - 1) {
+    for (x in 0 .. wnd.width - particleWidth - 1) {
         val gc = Graphics(wnd)
 
-        gc.setStroke(3.0)
-        gc.setColor(1)
+        gc.setStrokeWidth(3)
+        gc.color = Pal16.blue
 
         gc.clear()
 
@@ -37,7 +38,7 @@ fun main() {
         // Coordinates are Int, so we call Double.rountToInt function to make the conversion.
         val particleHeight = (initialParticleHeight * growK).roundToInt()
 
-        gc.drawRect(x, wnd.innerHeight/2 - particleHeight/2, particleWidth, particleHeight)
+        gc.drawRect(x, wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
 
