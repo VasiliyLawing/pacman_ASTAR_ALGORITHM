@@ -12,7 +12,7 @@ fun main() {
     // Now we use Window in buffered mode.
     // In buffered mode all you draw will be kept in a buffer until you call function "close" from Graphics class.
     // Read about double buffering in computer graphics.
-    val wnd = Window(1920, 1080, buffered = true)
+    val wnd = Window(800, 600, buffered = true)
 
     val y = wnd.height/2
 
@@ -55,6 +55,7 @@ fun main() {
         // We need it to give our eyes some time to see the image.
         // It also reduces CPU usage and power consumption.
         // Google "computer CPU" if you do not know what it is.
+        // You should call sleep function AFTER gc.close(), otherwise it will be flickering.
         sleep(5)
     }
 }

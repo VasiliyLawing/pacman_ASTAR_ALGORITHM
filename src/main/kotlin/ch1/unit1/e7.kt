@@ -7,7 +7,7 @@ import com.anysolo.toyGraphics.Window
 
 
 fun main() {
-    val wnd = Window(1920, 1080)
+    val wnd = Window(800, 600)
 
     val gc = Graphics(wnd)
 

@@ -6,7 +6,7 @@ import com.anysolo.toyGraphics.*
 // Try how it works pressing left and right arrows and space keys.
 
 fun main() {
-    val wnd = Window(1920, 1080, buffered = true)
+    val wnd = Window(800, 600, buffered = true)
 
     val rocketWidth = 50
     val rocketHeight = 10

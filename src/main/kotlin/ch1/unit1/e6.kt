@@ -24,9 +24,9 @@ fun main() {
     /*
     When we create an object we can pass some arguments.
     In this case arguments are width and height of the window.
-    So, our window will be 1920 x 1080 pixels.
+    So, our window will be 800 x 600 pixels.
     */
-    val wnd = Window(1920, 1080)
+    val wnd = Window(800, 600)
 
     // You can think about class Graphics like a smart pen.
     // We create an object of this class to draw on the window
@@ -42,7 +42,7 @@ fun main() {
      Below you can see we use function setColor and values innerWidth and innerHeight.
 
      Value 'color' exists inside any objects of class Graphics.
-     Values 'innerWidth' and 'innerHeight' exist inside any object of class Window.
+     Values 'width' and 'height' exist inside any object of class Window.
 
      You can access something inside object using dor notation like you can see below.
 
@@ -55,7 +55,7 @@ fun main() {
 
     // You can use colors from simple VGA palette Pal16 like this
     gc.color = Pal16.blue
-    gc.drawLine(0, 0, wnd.width-1, wnd.height)
+    gc.drawLine(0, 0, wnd.width-1, wnd.height-1)
 
     gc.color = Pal16.red
     gc.drawLine(0, wnd.height-1, wnd.width-1, 0)

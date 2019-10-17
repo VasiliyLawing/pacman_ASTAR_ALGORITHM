@@ -17,7 +17,7 @@ Understand what happens here. Debug it if you need it to understand how it works
 */
 
 fun main() {
-    val wnd = Window(1920, 1080, buffered = true)
+    val wnd = Window(800, 600, buffered = true)
 
     val particleWidth = 10
     val initialParticleHeight = 5

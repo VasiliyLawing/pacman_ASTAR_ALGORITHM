@@ -4,7 +4,7 @@ import com.anysolo.toyGraphics.*
 
 
 fun main() {
-    val wnd = Window(1920, 1080, buffered = true)
+    val wnd = Window(800, 600, buffered = true)
 
     val y = wnd.height/2
     var x = wnd.width/2

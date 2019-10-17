@@ -13,7 +13,7 @@ import com.anysolo.toyGraphics.sleep
 // You can google something like "velocity & acceleration" if you do not know what acceleration is.
 
 fun main() {
-    val wnd = Window(1920, 1080, buffered = true)
+    val wnd = Window(800, 600, buffered = true)
 
     val particleWidth = 10
     val initialParticleHeight = 2

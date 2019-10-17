@@ -3,10 +3,10 @@ package ch1.unit3
 import com.anysolo.toyGraphics.*
 
 
-// Try how it works pressing left and right arrow keys.
+// Try how it works by pressing left and right arrow keys.
 
 fun main() {
-    val wnd = Window(1920, 1080, buffered = true)
+    val wnd = Window(800, 600, buffered = true)
 
     val y = wnd.height/2
     var x = wnd.width/2
