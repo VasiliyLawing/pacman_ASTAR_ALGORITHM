@@ -20,8 +20,8 @@ fun main() {
         //println("x = $y, y = $y")
 
         // Uncomment these two lines to also change color randomly.
-        val color = Random.nextInt(0, 15)
-        g.color = Pal16[color]
+        //val color = Random.nextInt(0, 15)
+        //g.color = Pal16[color]
 
         // Drawing one pixel at the random coordinates
         g.drawDot(x, y)

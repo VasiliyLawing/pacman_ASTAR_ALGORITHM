@@ -19,7 +19,7 @@ fun main() {
     val initialParticleHeight = 2
 
     // Try to change acceleration to -0.07 and see what happens.
-    val acceleration = -0.07
+    val acceleration = -0.06
 
     var growK = 1.0
     var speed = 10.0
@@ -39,11 +39,11 @@ fun main() {
 
         gc.close()
 
-        // Sleep for 33 milliseconds gives something about 30 frames per second.
-        sleep(33)
-
         x += speed
         speed += acceleration
         growK += growKStep
+
+        // Sleep for 33 milliseconds gives something about 30 frames per second.
+        sleep(33)
     }
 }

@@ -25,7 +25,9 @@ fun main() {
     // we use Double type for more precise calculation
     var growK = 1.0
 
-    for (x in 0 .. wnd.width - particleWidth - 1) {
+    var x = 0
+
+    while(x < wnd.width - particleWidth) {
         val gc = Graphics(wnd)
 
         gc.setStrokeWidth(3)
@@ -42,7 +44,9 @@ fun main() {
 
         gc.close()
 
-        sleep(10)
         growK += 0.08
+        x++
+
+        sleep(10)
     }
 }
