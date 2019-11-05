@@ -1,59 +1,22 @@
 package ch1.unit3
 
-import com.anysolo.toyGraphics.*
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
 
 
 fun main() {
-    val wnd = Window(800, 600, buffered = true)
+    val wnd = Window(800, 600)
 
-    val y = wnd.height/2
-    var x = wnd.width/2
-    var speed = 0
+    var color = 0
+    var y = 0
 
-    // Here we use a Boolean variable to terminate the loop
-    // Boolean variable may be either true or false
-    var needToExit = false
+    val gc = Graphics(wnd)
+    repeat(16) {
+        gc.color = Pal16[color]
+        gc.drawLine(0, y, wnd.width-1, y)
 
-    val keyboard = Keyboard(wnd)
-
-    while(!needToExit) {
-        val key = keyboard.getPressedKey()
-
-        if(key != null) {
-            // You use "when" to make complex conditions clean and simple
-            when(key.code) {
-                'Q'.toInt() ->
-                    needToExit = true
-
-                KeyCodes.LEFT ->
-                    speed--
-
-                KeyCodes.RIGHT ->
-                    speed ++
-            }
-        }
-
-        val gc = Graphics(wnd)
-
-        gc.setStrokeWidth(3)
-        gc.color = Pal16.blue
-
-        gc.clear()
-        gc.drawRect(x, y, 50, 10)
-
-        gc.close()
-
-        x += speed
-
-        if(x < 0)
-            x = wnd.width - 1
-
-        else if (x >= wnd.width)
-            x = 0
-
-        sleep(5)
+        y += 20
+        color++
     }
-
-    println("The End")
-    wnd.close()
 }

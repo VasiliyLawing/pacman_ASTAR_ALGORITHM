@@ -1,58 +1,48 @@
 package ch1.unit3
 
 
-import com.anysolo.toyGraphics.*
+// We have to import roundToInt before we can use it.
+// But if you comment this line out you see IDEA offer you to insert this import automatically
+import kotlin.math.roundToInt
 
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
+import com.anysolo.toyGraphics.sleep
+
+
+/*
+Here we use more variables to add more dynamic to our example. Read the code carefully.
+Understand what happens here. Debug it if you need it to understand how it works.
+*/
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
 
-    val y = wnd.height/2
-    var x = 1
-    var speed = 1
+    val particleWidth = 10
+    val initialParticleHeight = 5
 
-    // This object allows you to receive data from keyboard.
-    val keyboard = Keyboard(wnd)
+    // we use Double type for more precise calculation
+    var growK = 1.0
 
-    while(true) {
-        // We save a pressed key as an object "key".
-        // Keyboard has a queue of pressed keys.
-        // If the queue is empty we get nothing.
-        // In Kotlin a value or variable can be nullable.
-        // Nullable variable can contain "null" value, which means it does not have any value.
-        val key = keyboard.getPressedKey()
-
-        // Process a key if variable "key" is not null
-        // We use {} block when we have more then one line of code inside "if".
-        if(key != null) {
-            // exit from the loop if key 'Q' was pressed.
-            // 'Q' is a Character, key.code is an Integer. So we need to convert 'Q' to an Integer
-            // before we can compare it with key.code
-            if (key.code == 'Q'.toInt())
-                break // "break" stop the current loop and executes the next line after the end of the loop
-        }
-
+    for (x in 0 .. wnd.width - particleWidth - 1) {
         val gc = Graphics(wnd)
 
         gc.setStrokeWidth(3)
         gc.color = Pal16.blue
 
         gc.clear()
-        gc.drawRect(x, y, 50, 10)
+
+        // The next arithmetic expression uses Double variable "growK"
+        // The result of initialParticleHeight * growK is a Double value.
+        // Coordinates are Int, so we call Double.rountToInt function to make the conversion.
+        val particleHeight = (initialParticleHeight * growK).roundToInt()
+
+        gc.drawRect(x, wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
 
-        if(x == 0 || x == wnd.width)
-            speed = -speed
-
-        x += speed
-
-        sleep(5)
+        sleep(10)
+        growK += 0.08
     }
-
-    println("The End")
-
-    // If we close the window the program will stop after we exit from main
-    // Otherwise it would wait you to close the window using mouse.
-    wnd.close()
 }

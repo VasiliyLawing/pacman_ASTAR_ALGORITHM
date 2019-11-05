@@ -1,35 +1,36 @@
 package ch1.unit2
 
 import com.anysolo.toyGraphics.Graphics
-import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
-import com.anysolo.toyGraphics.sleep
 
+/*
+We draw many similar lines using the same line of code with drawLine()
+To use the same code many times with different results we use "while" loop and "y" variable.
+Every next line is drawn closer to the bottom because we change "y" every time.
+Lines from 30 to 34 executed 11 times!.
+ */
 
 fun main() {
-    val wnd = Window(800, 600, buffered = true)
+    val wnd = Window(800, 600)
+    val gc = Graphics(wnd)
 
-    val y = wnd.height/2
+    var y = 50
 
-    // Now we use loop "for" which allows to write simpler and cleaner code
-    // "for" creates variable "x"
-    // Google "kotlin loop for", "Kotlin int range"
-    for (x in 0 .. wnd.width) {
-        val gc = Graphics(wnd)
+    // "while" is a loop operator which repeats the block of code inside "{}" while
+    // the given condition is true. Here the condition is to repeat while y is less then 600
+    // You can use following operator to compare something in the condition:
+    // "<" - less then
+    // "<=" - less or equal
+    // ">" - greater then
+    // ">=" - greater or equal
+    // "==" - equals
+    // "!=" not equals
+    // They called comparison operators.
+    while (y < 600) {
+        println("y = $y")
+        gc.drawLine(0, y, 799, y)
 
-        gc.setStrokeWidth(3)
-        gc.color = Pal16.blue
-
-        gc.clear()
-        gc.drawRect(x, y, 50, 10)
-
-        gc.close()
-
-        sleep(5)
+        // Increase y by 50
+        y += 50
     }
-
-    // Try to uncomment the next line
-    // println(x)
-    // Kotlin shows the error, because variable "x" visible only inside the loop.
-    // When you define a name, like value or variable, it visible only inside "{}" enclosing the block of code.
 }

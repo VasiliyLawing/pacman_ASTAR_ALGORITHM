@@ -1,61 +1,36 @@
 package ch1.unit2
 
 import com.anysolo.toyGraphics.Graphics
-import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
-
-// Import sleep function
-import com.anysolo.toyGraphics.sleep
 
 
 fun main() {
-    // Now we use Window in buffered mode.
-    // In buffered mode all you draw will be kept in a buffer until you call function "close" from Graphics class.
-    // Read about double buffering in computer graphics.
-    val wnd = Window(800, 600, buffered = true)
+    val wnd = Window(800, 600)
+    val gc = Graphics(wnd)
 
-    val y = wnd.height/2
+    // We give a name "y" to integer number 100
+    // But we use "var" instead of "val".
+    // It means we create a variable "y" and assign number 100 to it.
+    // Variable allows to change its content as many times as you want.
+    // It is like a box where you store something.
+    var y = 100
 
-    // Define a variable "x"
-    // Variable is is like a value except you can reassign it a different value any time.
-    // You use variable ("var") only if you need to reassign the value.
-    // If you are not sure, always try to use values ("val").
-    var x = 0
+    // Lets print y to see what happening
+    println("y = $y")
 
-    // Loop in programming repeats a block of code.
-    // Kotlin provides many ways to make a loop. Here we use "while"
+    // Now draw a line at the y level
+    gc.drawLine(0, y, 799, y)
 
-    // Loop redraws the frame, waiting 5 milliseconds and repeat it again
-    // Usually a loop has some condition to decide when it stops.
-    // Here the loop stops if "x" becomes less than inner width of the window
-    while(x < wnd.width) {
-        // In buffered window, we have to create new Graphics object before drawing each frame
-        val gc = Graphics(wnd)
+    // Let's change our y from 100 to 150 and draw another line
+    // We calculate y + 50 which will be 150 and then assign it back to y
+    y = y + 50
+    println("y = $y")
 
-        // setting width and color of the line
-        gc.setStrokeWidth(3)
-        gc.color = Pal16.blue
+    // Draw a line using absolutely the same line of code
+    gc.drawLine(0, y, 799, y)
 
-        gc.clear()
-        gc.drawRect(x, y, 50, 10)
-
-        // add one to value variable x and reassign it back.
-        x = x + 1
-
-        // You can rewrite the previous line as:
-        // x += 1 or just x++
-
-        // The best way would be to write here
-        // x++ instead of x = x + 1
-
-        // You have to "close" Graphic object to see what you drawn on the window
-        gc.close()
-
-        // Program will sleep for 5 milliseconds.
-        // We need it to give our eyes some time to see the image.
-        // It also reduces CPU usage and power consumption.
-        // Google "computer CPU" if you do not know what it is.
-        // You should call sleep function AFTER gc.close(), otherwise it will be flickering.
-        sleep(5)
-    }
+    // Skip more space
+    y += 100 // y += 100 is the same as y = y + 100
+    println("y = $y")
+    gc.drawLine(0, y, 799, y)
 }

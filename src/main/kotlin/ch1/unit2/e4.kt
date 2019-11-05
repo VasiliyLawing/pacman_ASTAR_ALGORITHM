@@ -1,49 +1,29 @@
 package ch1.unit2
 
-
-import kotlin.math.roundToInt
-
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
-import com.anysolo.toyGraphics.sleep
 
-
-// Here we introduce acceleration in motion of your object.
-// You can google something like "velocity & acceleration" if you do not know what acceleration is.
 
 fun main() {
-    val wnd = Window(800, 600, buffered = true)
+    val wnd = Window(800, 600)
+    val g = Graphics(wnd)
+    g.color = Pal16.blue
 
-    val particleWidth = 10
-    val initialParticleHeight = 2
+    // Let's try to change x and y simultaneously.
+    var x = 0
+    var y = 0
 
-    // Try to change acceleration to -0.07 and see what happens.
-    val acceleration = -0.07
+    // You create more complex condition using && and ||.
+    // "&&" means "and". "||" means "or".
+    while (x < wnd.width && y < wnd.height) {
+        // Look at the console to see how x and y are changing.
+        println("x = $y, y = $y")
 
-    var growK = 1.0
-    var speed = 10.0
-    var x = 0.0
-    val growKStep = 0.7
+        // You can see a nice variation if you change width and height from 25 to 50.
+        g.drawRect(x, y, 25, 25, fill = true)
 
-    while (x < wnd.width - particleWidth) {
-        val gc = Graphics(wnd)
-
-        gc.setStrokeWidth(3)
-        gc.color = Pal16.blue
-
-        gc.clear()
-
-        val particleHeight = (initialParticleHeight * growK).roundToInt()
-        gc.drawRect(x.roundToInt(), wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
-
-        gc.close()
-
-        // Sleep for 33 milliseconds gives something about 30 frames per second.
-        sleep(33)
-
-        x += speed
-        speed += acceleration
-        growK += growKStep
+        x += 50
+        y += 35
     }
 }

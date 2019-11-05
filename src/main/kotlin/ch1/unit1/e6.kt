@@ -39,10 +39,9 @@ fun main() {
 
      Objects usually have more then just one value inside.
 
-     Below you can see we use function setColor and values innerWidth and innerHeight.
-
-     Value 'color' exists inside any objects of class Graphics.
-     Values 'width' and 'height' exist inside any object of class Window.
+     Below you can see we values "g.color", "wnd.width" and wnd.height".
+     "g.color" means value "color" inside object "g".
+     And width and height exists inside object "wnd".
 
      You can access something inside object using dor notation like you can see below.
 
@@ -50,7 +49,7 @@ fun main() {
      everything you can use inside that object. Try it.
     */
 
-    // Set width of the lines we draw.
+    // Set width of the lines we draw. "setStrokeWidth is a function and it is also exists inside "g"
     g.setStrokeWidth(3)
 
     // You can use colors from simple VGA palette Pal16 like this
@@ -63,8 +62,13 @@ fun main() {
 
     g.color = Pal16.blue
     // Two draw a line we pass x,y of two points.
+    // wnd.height-1 will be the bottom line of pixes on the window.
     g.drawLine(25, 0, 25, wnd.height-1)
 
     g.color = Pal16.green
+    // wnd.width-1 will be the column of pixels on the right edge of the window
     g.drawLine(0, 25, wnd.width-1, 25)
+
+    // You need to subtract 1 from width and height because pixels start from 0
+    // not from 1 as you may be accustomed.
 }

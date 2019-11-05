@@ -1,60 +1,49 @@
 package ch1.unit3
 
-import com.anysolo.toyGraphics.*
+
+import kotlin.math.roundToInt
+
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
+import com.anysolo.toyGraphics.sleep
 
 
-// Try how it works by pressing left and right arrow keys.
+// Here we introduce acceleration in motion of your object.
+// You can google something like "velocity & acceleration" if you do not know what acceleration is.
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
 
-    val y = wnd.height/2
-    var x = wnd.width/2
-    var speed = 0
+    val particleWidth = 10
+    val initialParticleHeight = 2
 
-    val keyboard = Keyboard(wnd)
+    // Try to change acceleration to -0.07 and see what happens.
+    val acceleration = -0.07
 
-    while(true) {
-        val key = keyboard.getPressedKey()
+    var growK = 1.0
+    var speed = 10.0
+    var x = 0.0
+    val growKStep = 0.7
 
-        // Use {} block to conditionally execute many lines of code
-        if(key != null) {
-            if (key.code == 'Q'.toInt())
-                break
-
-            // If you start typing "KeyCodes."
-            // You see various key codes you can use
-
-            // See how you can move the object pressing left and right arrows.
-            if(key.code == KeyCodes.LEFT)
-                speed --
-            else
-                if(key.code == KeyCodes.RIGHT)
-                    speed ++
-        }
-
+    while (x < wnd.width - particleWidth) {
         val gc = Graphics(wnd)
 
         gc.setStrokeWidth(3)
         gc.color = Pal16.blue
 
         gc.clear()
-        gc.drawRect(x, y, 50, 10)
+
+        val particleHeight = (initialParticleHeight * growK).roundToInt()
+        gc.drawRect(x.roundToInt(), wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
 
+        // Sleep for 33 milliseconds gives something about 30 frames per second.
+        sleep(33)
+
         x += speed
-
-        // Loop the motion in both directions
-        if(x < 0)
-            x = wnd.width - 1
-
-        else if (x >= wnd.width)
-            x = 0
-
-        sleep(5)
+        speed += acceleration
+        growK += growKStep
     }
-
-    println("The End")
-    wnd.close()
 }
