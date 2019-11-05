@@ -12,17 +12,19 @@ fun main() {
     */
 
     println(1)
-    // Numbers without "." are integer numbers.
+    // Numbers without "." are integer numbers. In mathematics they called whole numbers.
     // 1 is a value of Int type
 
     println(3.14)
-    // Numbers with "." are floating point numbers.
-    // 3.14 is a value of Double type
+    // Numbers with "." are floating point numbers. In mathematics they called decimals.
+    // There are two types of floating numbers in Kotlin: Float and Double.
+    // For know, you can always use Double. Kotlin see any number with "." as a value of Double type.
 
     /*
     String, Int and Double are called types or classes.
     Term "type" is more appropriate when we talk about something simple, like a number.
     Term "class" is better when we talk about something more complex. You see it later.
+    When whe use a value of some comlex type we call it "object".
 
     String, Int and Double are predefined types in Kotlin.
     println is a predefined function.

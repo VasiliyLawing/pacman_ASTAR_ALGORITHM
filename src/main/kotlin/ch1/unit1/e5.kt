@@ -2,7 +2,7 @@ package ch1.unit1
 
 
 fun main() {
-    // Use keyword 'val' to a name to a value. A value maybe a result of some expression.
+    // Use keyword 'val' to give a name to a value. A value maybe a result of some expression.
     // You can use these names in other expressions
 
     val price = 10

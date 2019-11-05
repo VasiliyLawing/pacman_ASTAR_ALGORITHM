@@ -2,9 +2,9 @@ package ch1.unit1
 
 
 // To use something not built-in in Kotlin we should import it
-// In this example we use two classes defined in a library called "toyGraphics".
+// In this example we use something defined in a library called "toyGraphics".
 
-// We import classes Graphic, Window and Pal16
+// We import Graphic, Window and Pal16
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
@@ -31,7 +31,7 @@ fun main() {
     // You can think about class Graphics like a smart pen.
     // We create an object of this class to draw on the window
     // we pass the window we want to draw on as an argument
-    val gc = Graphics(wnd)
+    val g = Graphics(wnd)
 
     /*
      Y axis goes from up to down
@@ -51,12 +51,20 @@ fun main() {
     */
 
     // Set width of the lines we draw.
-    gc.setStrokeWidth(3)
+    g.setStrokeWidth(3)
 
     // You can use colors from simple VGA palette Pal16 like this
-    gc.color = Pal16.blue
-    gc.drawLine(0, 0, wnd.width-1, wnd.height-1)
+    g.color = Pal16.red
 
-    gc.color = Pal16.red
-    gc.drawLine(0, wnd.height-1, wnd.width-1, 0)
+    // To draw a rectangular we pass x and y where we want to place top left corner of the rectangular
+    // and width and height. If we pass an optional argument fill = true the rectangular will
+    // be colored inside.
+    g.drawRect(0, 0, 50, 50, fill = true)
+
+    g.color = Pal16.blue
+    // Two draw a line we pass x,y of two points.
+    g.drawLine(25, 0, 25, wnd.height-1)
+
+    g.color = Pal16.green
+    g.drawLine(0, 25, wnd.width-1, 25)
 }
