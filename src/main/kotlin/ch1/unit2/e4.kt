@@ -18,13 +18,13 @@ fun main() {
     val particleWidth = 10
     val initialParticleHeight = 2
 
-    // Try to change acceleration to -0.03 and see what happens.
-    val acceleration = -0.02
+    // Try to change acceleration to -0.07 and see what happens.
+    val acceleration = -0.07
 
     var growK = 1.0
     var speed = 10.0
     var x = 0.0
-    var growKStep = 0.7
+    val growKStep = 0.7
 
     while (x < wnd.width - particleWidth) {
         val gc = Graphics(wnd)
