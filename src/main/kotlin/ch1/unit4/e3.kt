@@ -3,6 +3,7 @@ package ch1.unit4
 
 import com.anysolo.toyGraphics.*
 
+// Now you can exit from the program by pressing 'Q' on the keyboard
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
