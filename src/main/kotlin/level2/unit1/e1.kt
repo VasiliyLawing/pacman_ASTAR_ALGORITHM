@@ -1,0 +1,51 @@
+package level2.unit1
+
+import com.anysolo.toyGraphics.*
+
+
+fun main() {
+    val wnd = Window(1280, 720, background = Pal16.black, buffered = true)
+    val keyboard = Keyboard(wnd)
+
+    val racketWidth = 75
+    val racketHeight = 10
+    var racketX = wnd.width/2 - racketWidth/2
+    val racketY = wnd.height - racketHeight/2 - 10
+    var racketSpeed = 0
+
+    // Game loop
+    while(true) {
+
+        // Processing keyboard
+        while (true) {
+            val key = keyboard.getPressedKey() ?: break
+
+            when(key.code) {
+                KeyCodes.LEFT -> racketSpeed--
+                KeyCodes.RIGHT -> racketSpeed++
+            }
+        }
+
+        // Calculating racket motion
+        racketX += racketSpeed
+        if(racketX < 0) {
+            racketX = 0
+            racketSpeed = -racketSpeed
+        } else if(racketX >= wnd.width) {
+            racketX = wnd.width - 1
+            racketSpeed = -racketSpeed
+        }
+
+        // Drawing
+        val g = Graphics(wnd)
+        g.clear()
+
+        g.color = Pal16.blue
+        g.drawRect(racketX, racketY, racketWidth, racketHeight, fill = true)
+
+        g.close()
+
+        // Delay between game frames
+        sleep(20)
+    }
+}
