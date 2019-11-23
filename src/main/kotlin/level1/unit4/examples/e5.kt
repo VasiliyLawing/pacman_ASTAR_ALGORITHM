@@ -1,9 +1,7 @@
-package level1.unit4
+package level1.unit4.examples
 
 import com.anysolo.toyGraphics.*
 
-
-// Try how it works by pressing left and right arrow keys.
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
@@ -12,25 +10,27 @@ fun main() {
     var x = wnd.width/2
     var speed = 0
 
+    // Here we use a Boolean variable to terminate the loop
+    // Boolean variable may be either true or false
+    var needToExit = false
+
     val keyboard = Keyboard(wnd)
 
-    while(true) {
+    while(!needToExit) {
         val key = keyboard.getPressedKey()
 
-        // Use {} block to conditionally execute many lines of code
         if(key != null) {
-            if (key.code == 'Q'.toInt())
-                break
+            // You use "when" to make complex conditions clean and simple
+            when(key.code) {
+                'Q'.toInt() ->
+                    needToExit = true
 
-            // If you start typing "KeyCodes."
-            // You see various key codes you can use
+                KeyCodes.LEFT ->
+                    speed--
 
-            // See how you can move the object pressing left and right arrows.
-            if(key.code == KeyCodes.LEFT)
-                speed --
-            else
-                if(key.code == KeyCodes.RIGHT)
+                KeyCodes.RIGHT ->
                     speed ++
+            }
         }
 
         val gc = Graphics(wnd)
@@ -45,7 +45,6 @@ fun main() {
 
         x += speed
 
-        // Loop the motion in both directions
         if(x < 0)
             x = wnd.width - 1
 
