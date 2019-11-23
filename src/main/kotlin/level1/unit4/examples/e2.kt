@@ -1,4 +1,4 @@
-package level1.unit4
+package level1.unit4.examples
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
@@ -15,6 +15,9 @@ fun main() {
     var x = 1
     var speed =1
 
+    val racketHeight = 10
+    val racketWidth = 50
+
     while(true) {
         val gc = Graphics(wnd)
         gc.clear()
@@ -22,12 +25,12 @@ fun main() {
         gc.setStrokeWidth(3)
         gc.color = Pal16.blue
 
-        gc.drawRect(x, y, 50, 10)
+        gc.drawRect(x, y, racketWidth, racketHeight)
 
         gc.close()
 
         // Here we use "if" without "else". It either executes one given line of code or nothing.
-        if(x == 0 || x == wnd.width)
+        if(x == 0 || x == wnd.width - racketWidth)
             speed = -speed // unary operator "-" convert positive speed into negative and negative into positive
 
         x += speed

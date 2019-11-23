@@ -1,4 +1,4 @@
-package level1.unit3
+package level1.unit3.examples
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
