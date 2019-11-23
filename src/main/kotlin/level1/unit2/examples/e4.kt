@@ -18,7 +18,7 @@ fun main() {
     // "&&" means "and". "||" means "or".
     while (x < wnd.width && y < wnd.height) {
         // Look at the console to see how x and y are changing.
-        println("x = $y, y = $y")
+        println("x = $x, y = $y")
 
         // You can see a nice variation if you change width and height from 25 to 50.
         g.drawRect(x, y, 25, 25, fill = true)

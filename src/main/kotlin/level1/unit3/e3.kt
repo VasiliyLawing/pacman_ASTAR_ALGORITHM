@@ -1,8 +1,6 @@
 package level1.unit3
 
 
-// We have to import roundToInt before we can use it.
-// But if you comment this line out you see IDEA offer you to insert this import automatically
 import kotlin.math.roundToInt
 
 import com.anysolo.toyGraphics.Graphics
@@ -11,23 +9,24 @@ import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
 
 
-/*
-Here we use more variables to add more dynamic to our example. Read the code carefully.
-Understand what happens here. Debug it if you need it to understand how it works.
-*/
+// Here we introduce acceleration in motion of your object.
+// You can google something like "velocity & acceleration" if you do not know what acceleration is.
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
 
     val particleWidth = 10
-    val initialParticleHeight = 5
+    val initialParticleHeight = 2
 
-    // we use Double type for more precise calculation
+    // Try to change acceleration to -0.07 and see what happens.
+    val acceleration = -0.06
+
     var growK = 1.0
+    var speed = 10.0
+    var x = 0.0
+    val growKStep = 0.7
 
-    var x = 0
-
-    while(x < wnd.width - particleWidth) {
+    while (x < wnd.width - particleWidth) {
         val gc = Graphics(wnd)
 
         gc.setStrokeWidth(3)
@@ -35,18 +34,16 @@ fun main() {
 
         gc.clear()
 
-        // The next arithmetic expression uses Double variable "growK"
-        // The result of initialParticleHeight * growK is a Double value.
-        // Coordinates are Int, so we call Double.rountToInt function to make the conversion.
         val particleHeight = (initialParticleHeight * growK).roundToInt()
-
-        gc.drawRect(x, wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
+        gc.drawRect(x.roundToInt(), wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
 
-        growK += 0.08
-        x++
+        x += speed
+        speed += acceleration
+        growK += growKStep
 
-        sleep(10)
+        // Sleep for 33 milliseconds gives something about 30 frames per second.
+        sleep(33)
     }
 }
