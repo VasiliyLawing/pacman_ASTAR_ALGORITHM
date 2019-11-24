@@ -13,6 +13,7 @@ private val racketY = wnd.height - racketHeight/2 - 10
 private var racketSpeed = 0
 private val maximumRacketSpeed = 5
 
+
 private fun limitNumber(n: Int, from: Int, to: Int): Int {
     when {
         n < from -> return from
