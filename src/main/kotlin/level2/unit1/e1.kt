@@ -12,6 +12,7 @@ fun main() {
     var racketX = wnd.width/2 - racketWidth/2
     val racketY = wnd.height - racketHeight/2 - 10
     var racketSpeed = 0
+    val maxRacketSpeed = 5
 
     // Game loop
     while(true) {
@@ -21,8 +22,11 @@ fun main() {
             val key = keyboard.getPressedKey() ?: break
 
             when(key.code) {
-                KeyCodes.LEFT -> racketSpeed--
-                KeyCodes.RIGHT -> racketSpeed++
+                KeyCodes.LEFT ->
+                    racketSpeed = if(racketSpeed > -maxRacketSpeed) racketSpeed-1 else -maxRacketSpeed
+
+                KeyCodes.RIGHT ->
+                    racketSpeed = if(racketSpeed < maxRacketSpeed) racketSpeed+1 else maxRacketSpeed
             }
         }
 

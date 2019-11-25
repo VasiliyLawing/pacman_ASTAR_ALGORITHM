@@ -2,8 +2,8 @@ package level1.unit4.examples
 
 import com.anysolo.toyGraphics.*
 
-
-// Try how it works pressing left and right arrows and space keys.
+// See how you can limit speed of the racket using Kotlin "if expression"
+// Look at the code between "NEW" and "END NEW" comments
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
@@ -12,7 +12,8 @@ fun main() {
     val rocketHeight = 10
     val y = wnd.height - 20
     var x = wnd.width/2
-    var racketSpeed = 0
+    var rocketSpeed = 0
+    val maxRocketSpeed = 10
     var needToExit = false
 
     val keyboard = Keyboard(wnd)
@@ -32,11 +33,13 @@ fun main() {
                 'Q'.toInt() ->
                     needToExit = true
 
+// NEW -------------------------
                 KeyCodes.LEFT ->
-                    racketSpeed--
+                    rocketSpeed = if(rocketSpeed > -maxRocketSpeed) rocketSpeed-1 else -maxRocketSpeed
 
                 KeyCodes.RIGHT ->
-                    racketSpeed ++
+                    rocketSpeed = if(rocketSpeed < maxRocketSpeed) rocketSpeed+1 else maxRocketSpeed
+// END NEW ---------------------
 
                 KeyCodes.SPACE -> {
                     bulletFlying = true
@@ -64,7 +67,7 @@ fun main() {
 
         gc.close()
 
-        x += racketSpeed
+        x += rocketSpeed
 
         if(x < 0)
             x = wnd.width - 1

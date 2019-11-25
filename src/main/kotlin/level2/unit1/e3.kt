@@ -1,5 +1,7 @@
 package level2.unit1
 
+// Here we create a function "changeRacketSpeed" with an argument to use the same logic in several places.
+
 import com.anysolo.toyGraphics.*
 
 
@@ -11,15 +13,18 @@ private val racketHeight = 10
 private var racketX = wnd.width/2 - racketWidth/2
 private val racketY = wnd.height - racketHeight/2 - 10
 private var racketSpeed = 0
-private val maximumRacketSpeed = 5
+private val maxRacketSpeed = 5
 
 
-private fun limitNumber(n: Int, from: Int, to: Int): Int {
-    when {
-        n < from -> return from
-        n > to -> return to
-        else -> return n
-    }
+// NEW ---------------------------------------
+private fun changeRacketSpeed(delta: Int) {
+    racketSpeed += delta
+
+    if(racketSpeed < -maxRacketSpeed)
+        racketSpeed = -maxRacketSpeed
+
+    if(racketSpeed > maxRacketSpeed)
+        racketSpeed = maxRacketSpeed
 }
 
 private fun processKeyboard() {
@@ -27,11 +32,12 @@ private fun processKeyboard() {
         val key = keyboard.getPressedKey() ?: break
 
         when(key.code) {
-            KeyCodes.LEFT -> limitNumber(racketSpeed, -maximumRacketSpeed, maximumRacketSpeed)
-            KeyCodes.RIGHT -> racketSpeed++
+            KeyCodes.LEFT -> changeRacketSpeed(1)
+            KeyCodes.RIGHT -> changeRacketSpeed(-1)
         }
     }
 }
+// END NEW ---------------------------------------
 
 private fun calculationRacketMotion() {
     racketX += racketSpeed

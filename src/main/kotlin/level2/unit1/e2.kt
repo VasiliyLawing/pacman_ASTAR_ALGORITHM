@@ -2,11 +2,14 @@ package level2.unit1
 
 import com.anysolo.toyGraphics.*
 
+// Here you can see how use your own functions to split the program into
+// smaller and easier to understand pieces of code.
+
 
 // Values and variables defined on the top level will be visible for all functions
-// "private" before "val" or "var" limit visibility to this file only.
+// "private" before "val" or "var" limits visibility to this file only.
 // Without "private" you can see and accidentally use some of these names in other files.
-// You always should limit visibility of our variables as much as you can.
+// You always should limit visibility as much as you can.
 private val wnd = Window(1280, 720, background = Pal16.black, buffered = true)
 private val keyboard = Keyboard(wnd)
 
@@ -15,6 +18,7 @@ private val racketHeight = 10
 private var racketX = wnd.width/2 - racketWidth/2
 private val racketY = wnd.height - racketHeight/2 - 10
 private var racketSpeed = 0
+private val maxRacketSpeed = 5
 
 
 private fun processKeyboard() {
@@ -22,8 +26,11 @@ private fun processKeyboard() {
         val key = keyboard.getPressedKey() ?: break
 
         when(key.code) {
-            KeyCodes.LEFT -> racketSpeed--
-            KeyCodes.RIGHT -> racketSpeed++
+            KeyCodes.LEFT ->
+                racketSpeed = if(racketSpeed > -maxRacketSpeed) racketSpeed-1 else -maxRacketSpeed
+
+            KeyCodes.RIGHT ->
+                racketSpeed = if(racketSpeed < maxRacketSpeed) racketSpeed+1 else maxRacketSpeed
         }
     }
 }
