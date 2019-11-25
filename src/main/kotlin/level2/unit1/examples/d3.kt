@@ -1,4 +1,4 @@
-package level2.unit1
+package level2.unit1.examples
 
 // Here we create a function "changeRacketSpeed" with an argument to use the same logic in several places.
 
@@ -10,8 +10,8 @@ private val keyboard = Keyboard(wnd)
 
 private val racketWidth = 75
 private val racketHeight = 10
-private var racketX = wnd.width/2 - racketWidth/2
-private val racketY = wnd.height - racketHeight/2 - 10
+private var racketX = wnd.width/2 - racketWidth /2
+private val racketY = wnd.height - racketHeight /2 - 10
 private var racketSpeed = 0
 private val maxRacketSpeed = 5
 

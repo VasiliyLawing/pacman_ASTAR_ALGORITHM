@@ -1,4 +1,4 @@
-package level2.unit1
+package level2.unit1.examples
 
 import com.anysolo.toyGraphics.*
 
@@ -15,8 +15,8 @@ private val keyboard = Keyboard(wnd)
 
 private val racketWidth = 75
 private val racketHeight = 10
-private var racketX = wnd.width/2 - racketWidth/2
-private val racketY = wnd.height - racketHeight/2 - 10
+private var racketX = wnd.width/2 - racketWidth /2
+private val racketY = wnd.height - racketHeight /2 - 10
 private var racketSpeed = 0
 private val maxRacketSpeed = 5
 
@@ -27,10 +27,10 @@ private fun processKeyboard() {
 
         when(key.code) {
             KeyCodes.LEFT ->
-                racketSpeed = if(racketSpeed > -maxRacketSpeed) racketSpeed-1 else -maxRacketSpeed
+                racketSpeed = if(racketSpeed > -maxRacketSpeed) racketSpeed -1 else -maxRacketSpeed
 
             KeyCodes.RIGHT ->
-                racketSpeed = if(racketSpeed < maxRacketSpeed) racketSpeed+1 else maxRacketSpeed
+                racketSpeed = if(racketSpeed < maxRacketSpeed) racketSpeed +1 else maxRacketSpeed
         }
     }
 }
