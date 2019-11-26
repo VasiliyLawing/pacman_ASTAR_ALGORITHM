@@ -57,7 +57,7 @@ private fun drawing() {
     g.close()
 }
 
-fun main() {
+private fun main() {
     while(true) {
         processKeyboard()
         calculationRacketMotion()

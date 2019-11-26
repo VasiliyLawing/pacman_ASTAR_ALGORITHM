@@ -1,4 +1,4 @@
-package level2.unit1.examples
+package level2.unit2.examples
 
 // Here we create a function "changeRacketSpeed" with an argument to use the same logic in several places.
 
@@ -61,7 +61,7 @@ private fun drawing() {
     g.close()
 }
 
-fun main() {
+private fun main() {
     while(true) {
         processKeyboard()
         calculationRacketMotion()

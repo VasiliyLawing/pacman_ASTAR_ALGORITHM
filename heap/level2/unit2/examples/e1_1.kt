@@ -1,7 +1,7 @@
 package level2.unit2.examples
 
 
-fun main() {
+private fun main() {
     // You explicitly specify the type of variable
     val s: String = ""
     val n1: Int = 1

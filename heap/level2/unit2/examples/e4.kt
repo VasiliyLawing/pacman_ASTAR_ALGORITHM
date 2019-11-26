@@ -1,7 +1,7 @@
 package level2.unit2.examples
 
 
-fun main() {
+private fun main() {
     // You force a variable to have a particular type.
     // Try to change "1.0" into "1" and you will get an error.
     val n: Double = 1.0 / 3

@@ -1,7 +1,7 @@
 package level2.unit2.examples
 
 
-fun main() {
+private fun main() {
     // As you know we can insert any variable inside text like this:
     val a = 13
     println("Our variable will be inserted here: $a, before the rest of the text")

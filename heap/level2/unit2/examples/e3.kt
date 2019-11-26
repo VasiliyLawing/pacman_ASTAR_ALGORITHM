@@ -3,7 +3,7 @@ package level2.unit2.examples
 import kotlin.math.roundToInt
 
 
-fun main() {
+private fun main() {
     val i = 1
     val f = 1.7
     val s = "Hello"

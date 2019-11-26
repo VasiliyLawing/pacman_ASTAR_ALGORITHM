@@ -3,7 +3,10 @@ package level2.unit1.examples
 import com.anysolo.toyGraphics.*
 
 
-fun main() {
+// Lets take a more complex and realistic program and see how we can make it simpler using functions
+// First write it without functions, using comments to mart blocks of logic.
+
+private fun main() {
     val wnd = Window(1280, 720, background = Pal16.black, buffered = true)
     val keyboard = Keyboard(wnd)
 

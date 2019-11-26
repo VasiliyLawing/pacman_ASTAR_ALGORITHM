@@ -1,7 +1,7 @@
 package level2.unit2.examples
 
 
-fun main() {
+private fun main() {
     // You can using Ctrl+Shift+P in Intellij IDEA to check the type of expression.
     val i = 1       // A number of Int type (Whole number)
     val f = 1.0     // A number of Double type (decimal number using floating point arithmetic)
