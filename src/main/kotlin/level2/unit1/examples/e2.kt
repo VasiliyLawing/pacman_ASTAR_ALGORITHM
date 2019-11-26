@@ -1,20 +1,36 @@
 package level2.unit1.examples
 
 
-// You can write a block of clode and give it a name
-// This will be a function
-private fun printLine() {
-    println("-----------------------------------------------------------")
+// This variable is visible from all functions inside this file
+private val b = 1000
+
+
+private fun myFunc1() {
+    // variable "a" visible only in this function
+    val a = 1 + 2
+
+    println("MyFunc1 a=$a")
+    println("MyFunc1 b=$b")
+    println()
+}
+
+private fun myFunc2() {
+    // variable "a" visible only in this function
+    val a = 3 + 4
+
+    println("MyFunc2 a=$a")
+    println("MyFunc2 b=$b")
+    println()
 }
 
 
-// You can use this function many times in different places
 fun main() {
-    // You call function writing its name followed by  "()"
-    printLine()
-    println("something between lines")
-    println("some more")
-    printLine()
-}
+    // variable "a" visible only in this function
+    val a = 10
 
-// BTW, println is also a function.
+    myFunc1()
+    myFunc2()
+
+    println("main a=$a")
+    println("main b=$b")
+}
