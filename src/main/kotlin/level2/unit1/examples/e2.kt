@@ -1,6 +1,14 @@
 package level2.unit1.examples
 
 
+/*
+Each variable has visibility scope.
+This example shows you variables visible inside one function or inside one file.
+If you remove "private" from "val b = 1000" variable will be visible inside the whole project.
+You always should limit visibility of everything as much as you can.
+ */
+
+
 // This variable is visible from all functions inside this file
 private val b = 1000
 
@@ -24,7 +32,7 @@ private fun myFunc2() {
 }
 
 
-fun main() {
+private fun main() {
     // variable "a" visible only in this function
     val a = 10
 

@@ -9,7 +9,7 @@ private fun printLine() {
 
 
 // You can use this function many times in different places
-fun main() {
+private fun main() {
     // You call function writing its name followed by  "()"
     printLine()
     println("something between lines")
