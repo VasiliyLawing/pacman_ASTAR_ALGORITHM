@@ -1,4 +1,4 @@
-package level1.unit3.tasks
+package level1.unit3.solutions
 
 import prgb1.solutions.unit3.task3
 
