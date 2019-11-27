@@ -1,4 +1,4 @@
-package level1.unit1
+package level1.unit1.examples
 
 /*
     An arithmetic expression executes mathematical calculation. The result of
