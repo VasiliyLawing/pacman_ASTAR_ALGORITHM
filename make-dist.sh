@@ -1,6 +1,6 @@
 #!/bin/bash
 
-prj_name="prg-b1-examples"
+prj_name="prg-b1-course"
 
 rm -Rf dist
 mkdir -p dist/${prj_name}
