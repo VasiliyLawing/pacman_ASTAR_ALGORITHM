@@ -1,6 +1,6 @@
 package level1.unit2.solutions
 
-import prgb1.solutions.unit2.task1
+import prgb1.solutions.level1.unit2.task1
 
 
 fun main() {
