@@ -18,7 +18,7 @@ private val racketHeight = 10
 private var racketX = wnd.width/2 - racketWidth /2
 private val racketY = wnd.height - racketHeight /2 - 10
 private var racketSpeed = 0
-private val maxRacketSpeed = 5
+private val maxRacketSpeed = 15
 
 
 private fun processKeyboard() {
@@ -41,8 +41,8 @@ private fun calculationRacketMotion() {
     if(racketX < 0) {
         racketX = 0
         racketSpeed = -racketSpeed
-    } else if(racketX >= wnd.width) {
-        racketX = wnd.width - 1
+    } else if(racketX > wnd.width - racketWidth) {
+        racketX = wnd.width - racketWidth - 1
         racketSpeed = -racketSpeed
     }
 }
