@@ -1,13 +1,13 @@
-package prgb1.solutions.level2.unit2
+package level2.unit2.tasks
 
 import com.anysolo.toyGraphics.*
 
 
-const val amountOfRows = 10
-const val amountOfColumns = 15
-const val blockWidth = 75
-const val blockHeight = 25
-const val blockDistance = 8
+private const val amountOfRows = 10
+private const val amountOfColumns = 15
+private const val blockWidth = 75
+private const val blockHeight = 25
+private const val blockDistance = 8
 
 
 // Write function drawBlock here
