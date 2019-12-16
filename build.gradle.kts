@@ -44,7 +44,6 @@ dependencies {
     compile(kotlin("stdlib"))
     compile(kotlin("stdlib-jdk8"))
     compile(kotlin("reflect"))
-//    compile("com.anysolo:toyGraphics:0.8.6.4")
-    compile(files("../toyGraphics/build/libs/toyGraphics-0.8.6.5.jar"))
-    compile("com.anysolo:prg-b1-course-solutions:0.2.1")
+    compile("com.anysolo:toyGraphics:0.8.6.6")
+    compile("com.anysolo:prg-b1-course-solutions:0.2.3")
 }
