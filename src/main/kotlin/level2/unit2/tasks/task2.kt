@@ -10,7 +10,12 @@ private const val blockHeight = 25
 private const val blockDistance = 8
 
 
-// Write functions drawBlock and calcBlockPosition here
+/*
+ Write functions drawBlock and calcBlockPosition here
+
+fun drawBlock(g: Graphics, pos: Pos) {
+}
+*/
 
 
 fun main() {
