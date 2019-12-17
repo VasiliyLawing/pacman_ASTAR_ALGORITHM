@@ -5,6 +5,8 @@ import com.anysolo.toyGraphics.*
 
 
 /*
+Write function isInsideTheTrap and uncomment the following code. Function should return Boolean type
+
 val flyingBlockSize = BlockSize(75, 25)
 val trapBlockSize = BlockSize(200, 50)
 val trapBlockPos = Pos(400, 400)
