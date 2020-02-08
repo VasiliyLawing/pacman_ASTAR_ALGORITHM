@@ -1,3 +1,6 @@
+Please make a file task1.kt in the same directory as this on.
+Copy the code below, finish function processNumber, and make the test pass.
+
 package level2.unit3.tasks.task1
 
 
@@ -13,11 +16,8 @@ fun main() {
         println("Failed.\nExpected: $expectedList\nYou made: $filteredNumbers")
 }
 
-/*
-Please make a file studentCode.kt in the same package as this on.
-Copy the code below and make it work.
-
-
+// This function supposed to return numbers from sourceNumbers list
+// which are equal or more then 100
 fun processNumbers(sourceNumbers: List<Int>): List<Int> {
     val filteredNumbers = mutableListOf<Int>()
 
@@ -27,5 +27,3 @@ fun processNumbers(sourceNumbers: List<Int>): List<Int> {
 
     return filteredNumbers
 }
-
-*/
