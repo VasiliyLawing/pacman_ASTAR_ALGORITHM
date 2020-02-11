@@ -3,8 +3,6 @@ package level2.unit4.examples
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
-
-// Import sleep function
 import com.anysolo.toyGraphics.sleep
 
 
