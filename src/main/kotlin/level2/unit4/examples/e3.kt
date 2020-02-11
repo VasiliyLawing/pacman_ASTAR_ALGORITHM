@@ -1,6 +1,8 @@
 package level2.unit4.examples
 
+
 // You can a function taking a lambda as an argument
+// This is pretty much the same what "map" standard function does.
 fun processList(list: List<Int>, lambda: (Int) -> Int): List<Int> {
     val tmpList = mutableListOf<Int>()
 
@@ -9,6 +11,7 @@ fun processList(list: List<Int>, lambda: (Int) -> Int): List<Int> {
 
     return tmpList
 }
+
 
 fun main() {
     val sourceNumbers = listOf(1, 10, -5, 100, -20, 30, 50)
