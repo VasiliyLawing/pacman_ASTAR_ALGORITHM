@@ -11,6 +11,11 @@ fun main() {
     println(filteredNumbers)
 
     // You can combine several sequence processing function like this
+    // map function apply given lambda to all items in the list and
+    // return new list of results.
     val roundedAndFilteredNumbers = sourceNumbers.map { it.roundToInt() } . filter { it >= 100 } . sorted()
     println(roundedAndFilteredNumbers)
+
+    // You can find a lot of other functions working with lists
+    // by typing "." after list name and then looking on the menu
 }
