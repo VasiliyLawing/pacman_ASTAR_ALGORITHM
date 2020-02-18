@@ -1,11 +1,16 @@
+// Create file task3.kt, copy the code bellow and make it work.
+
+
 package level2.unit2.tasks
 
 
 import com.anysolo.toyGraphics.*
 
 
-/*
-Write function isInsideTheTrap and uncomment the following code. Function should return Boolean type
+// ------------------
+Write function isInsideTheTrap here. Function should return Boolean type
+//---------------------
+
 
 val flyingBlockSize = BlockSize(75, 25)
 val trapBlockSize = BlockSize(200, 50)
@@ -46,4 +51,3 @@ fun main() {
         sleep(10)
     }
 }
-*/

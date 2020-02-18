@@ -1,9 +1,12 @@
+// Create file task1.kt, copy the code bellow and make it work.
+
+
 package level2.unit2.tasks
 
 import com.anysolo.toyGraphics.*
 
 
-private const val amountOfRows = 10
+private const val amountOfRows = 21
 private const val amountOfColumns = 15
 private const val blockWidth = 75
 private const val blockHeight = 25
