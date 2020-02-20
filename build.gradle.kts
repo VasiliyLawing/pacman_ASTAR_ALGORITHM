@@ -37,7 +37,8 @@ repositories {
             username = artifactory_username
             password = artifactory_password
         }
-    }}
+    }
+}
 
 dependencies {
     compile(gradleApi())
