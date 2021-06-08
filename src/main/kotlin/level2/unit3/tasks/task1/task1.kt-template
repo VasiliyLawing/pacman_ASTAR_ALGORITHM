@@ -4,7 +4,7 @@ Copy the code below, finish function processNumber, and make the test pass.
 package level2.unit3.tasks.task1
 
 
-fun main() {
+fun level1.unit2.examples.main() {
     val expectedList = listOf(110, 150, 100, 9000, 200, 130)
     val sourceNumbers = listOf(10, 110, 20, -20, 150, 30, 100, 70, 9000, 200, 130)
 

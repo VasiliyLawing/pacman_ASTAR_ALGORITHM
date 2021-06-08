@@ -13,7 +13,7 @@ buildscript {
 }
 
 plugins {
-    kotlin("jvm") version "1.3.50"
+    kotlin("jvm") version "1.4.30"
 }
 
 val localProperties = Properties()
@@ -46,6 +46,6 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile(kotlin("reflect"))
 
-    compile("com.anysolo:toyGraphics:0.8.6.6")
+    compile("com.anysolo:toyGraphics:dev-v2-0.2.1")
     compile("com.anysolo:prg-b1-course-solutions:0.2.3")
 }

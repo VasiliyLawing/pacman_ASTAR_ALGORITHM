@@ -18,7 +18,7 @@ private const val blockDistance = 8
 */
 
 
-fun main() {
+fun level1.unit2.examples.main() {
     val wnd = Window(1280, 720)
     val g = Graphics(wnd)
 

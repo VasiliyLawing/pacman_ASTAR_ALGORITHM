@@ -9,7 +9,7 @@ package level2.unit4.tasks.task1
 // --------------------------
 
 
-fun main() {
+fun level1.unit2.examples.main() {
     var n = 0
 
     myRepeat(5) {

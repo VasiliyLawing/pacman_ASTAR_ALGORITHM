@@ -28,7 +28,7 @@ fun main() {
     // Loop redraws the frame, waiting 5 milliseconds and repeat it again
     // Usually a loop has some condition to decide when it stops.
     // Here the loop stops if "x" becomes less than inner width of the window
-    while(x < wnd.width) {
+    while(true) {
         // In buffered window, we have to create new Graphics object before drawing each frame
         val gc = Graphics(wnd)
 
@@ -40,7 +40,7 @@ fun main() {
         gc.drawRect(x, y, 50, 10)
 
         // add one to value variable x and reassign it back.
-        x = x + 1
+        x = x - 1
 
         // You can rewrite the previous line as:
         // x += 1 or just x++

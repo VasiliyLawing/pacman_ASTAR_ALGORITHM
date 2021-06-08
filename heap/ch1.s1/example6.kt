@@ -16,7 +16,7 @@ fun main() {
   val n3: Double = 3.0
   println("3: ${n3/2}")
 
-  // values of String type. operator concatenates strings
+  // values of String type. operator concatenates level2.various.strings
   val s1 = "str1"
   val s2: String = "str2" // we can specify String type explicitly
   val s3 = s1 + " " + s2
@@ -35,6 +35,6 @@ fun main() {
   val s4 = "123"
   println("8: " + s4.toInt() * 2)
 
-  // Uncomment this line and you'll the error. operator "*" doesn't work with strings
+  // Uncomment this line and you'll the error. operator "*" doesn't work with level2.various.strings
   // println("8.2: " + s4 * 2)
 }

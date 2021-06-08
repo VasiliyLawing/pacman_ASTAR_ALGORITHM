@@ -6,6 +6,6 @@ fun main() {
   println(args[0] + args[1])
 
   // And here it prints sum of two arguments
-  // Because operator + works differently for strings and numbers
+  // Because operator + works differently for level2.various.strings and numbers
   println(args[0].toInt() + args[1].toInt())
 }

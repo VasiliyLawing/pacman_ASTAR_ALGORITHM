@@ -42,4 +42,6 @@ fun main() {
 
     // We call our function and pass our arguments.
     drawTank(g, tankPos)
+
+    println("The end")
 }

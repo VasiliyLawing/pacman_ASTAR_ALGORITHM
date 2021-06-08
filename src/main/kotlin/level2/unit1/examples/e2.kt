@@ -39,6 +39,6 @@ private fun main() {
     myFunc1()
     myFunc2()
 
-    println("main a=$a")
-    println("main b=$b")
+    println("level1.unit2.examples.main a=$a")
+    println("level1.unit2.examples.main b=$b")
 }

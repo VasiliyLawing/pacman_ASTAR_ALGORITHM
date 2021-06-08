@@ -1,0 +1,6 @@
+fun main() {
+    val n1: Int = 3
+    val n2 = 2.0
+    val res = n1 / n2
+    println(res)
+}
