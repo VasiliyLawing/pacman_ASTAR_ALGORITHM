@@ -6,7 +6,7 @@ package level1.unit1.examples
  package <chapter>.<section>.
  chapter and section are just names to refer to.
 
- fun level1.unit2.examples.main() {
+ fun main() {
    // You write your own code here
  }
 */
