@@ -40,7 +40,7 @@ fun main() {
         gc.drawRect(x, y, 50, 10)
 
         // add one to value variable x and reassign it back.
-        x = x - 1
+        x = x + 1
 
         // You can rewrite the previous line as:
         // x += 1 or just x++
