@@ -25,7 +25,7 @@ fun main() {
     String, Int and Double are called types or classes.
     Term "type" is more appropriate when we talk about something simple, like a number.
     Term "class" is better when we talk about something more complex. You see it later.
-    When whe use a value of some comlex type we call it "object".
+    When whe use a value of some complex type we call it "object".
 
     String, Int and Double are predefined types in Kotlin.
     println is a predefined function.
