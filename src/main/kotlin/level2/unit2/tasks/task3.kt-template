@@ -32,7 +32,7 @@ fun drawTrapBlock(g: Graphics, pos: Pos, isActive: Boolean) {
     g.drawRect(pos.x, pos.y, trapBlockSize.width, trapBlockSize.height, fill = isActive)
 }
 
-fun level1.unit2.examples.main() {
+fun level1.main() {
     val wnd = Window(1280, 720, buffered = true)
 
     var pos = Pos(0, 0)

@@ -47,7 +47,8 @@ dependencies {
     compile(kotlin("reflect"))
 
     compile("com.anysolo:toyGraphics:dev-v2-0.2.6")
-    compile("com.anysolo:prg-b1-course-solutions:0.2.3") {
+
+    compile("com.anysolo:prg-b1-course-solutions:0.3.0") {
         exclude("com.anysolo", "toyGraphics")
     }
 }
