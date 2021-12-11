@@ -29,7 +29,6 @@ repositories {
     val artifactory_password: String by localProperties
 
     jcenter()
-    maven(url="https://dl.bintray.com/anysolo/edu")
 
     maven {
         url = uri("${artifactory_contextUrl}/gradle-dev")
@@ -51,4 +50,6 @@ dependencies {
     compile("com.anysolo:prg-b1-course-solutions:0.3.0") {
         exclude("com.anysolo", "toyGraphics")
     }
+
+    compile("com.anysolo:lib-student:0.5.0.1")
 }
