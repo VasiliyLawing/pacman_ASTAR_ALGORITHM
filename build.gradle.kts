@@ -4,16 +4,24 @@ import java.util.Properties
 buildscript {
     repositories {
         mavenCentral()
+        maven(url="https://plugins.gradle.org/m2/")
         jcenter()
     }
 
     dependencies {
-        classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.1")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32")
+//        classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.1")
     }
 }
 
 plugins {
-    kotlin("jvm") version "1.4.30"
+    kotlin("jvm") version "1.4.32"
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 val localProperties = Properties()
@@ -24,11 +32,11 @@ if (localPropertiesFile.exists()) {
 
 
 repositories {
+    mavenCentral()
+
     val artifactory_contextUrl: String by localProperties
     val artifactory_username: String by localProperties
     val artifactory_password: String by localProperties
-
-    jcenter()
 
     maven {
         url = uri("${artifactory_contextUrl}/gradle-dev")
@@ -45,11 +53,11 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile(kotlin("reflect"))
 
-    compile("com.anysolo:toyGraphics:dev-v2-0.2.6")
+    compile("com.anysolo:toyGraphics:dev-v2-0.2.7")
 
-    compile("com.anysolo:prg-b1-course-solutions:0.3.0") {
+    compile("com.anysolo:prg-b1-course-solutions:0.3.3.0") {
         exclude("com.anysolo", "toyGraphics")
     }
 
-    compile("com.anysolo:lib-student:0.5.0.1")
+    compile("com.anysolo:lib-student:0.5.0.8")
 }

@@ -23,7 +23,7 @@ fun main() {
             println("Correct!")
             break
         } else {
-            println("Wrong number")
+            println("Wrong number.")
         }
 
         testNumber++

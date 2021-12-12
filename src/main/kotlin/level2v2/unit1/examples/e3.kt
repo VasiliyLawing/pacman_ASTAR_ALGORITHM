@@ -9,7 +9,7 @@ fun checkNumber(testNumber: Int, guestedNumber: Int): Boolean {
         return true
     }
 
-    println("Wrong number")
+    println("Wrong number.")
     return false
 }
 
