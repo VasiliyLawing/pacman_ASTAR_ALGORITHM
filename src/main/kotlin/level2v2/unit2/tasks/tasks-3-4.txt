@@ -1,0 +1,2 @@
+Task 3 and 4
+Write programs work like solution/s3.kt and solution/s4.kt
