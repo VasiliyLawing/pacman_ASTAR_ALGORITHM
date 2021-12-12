@@ -38,6 +38,8 @@ repositories {
     val artifactory_username: String by localProperties
     val artifactory_password: String by localProperties
 
+    jcenter()
+
     maven {
         url = uri("${artifactory_contextUrl}/gradle-dev")
         credentials {
@@ -55,7 +57,7 @@ dependencies {
 
     compile("com.anysolo:toyGraphics:dev-v2-0.2.7")
 
-    compile("com.anysolo:prg-b1-course-solutions:0.3.3.0") {
+    compile("com.anysolo:prg-b1-course-solutions:0.3.3.1") {
         exclude("com.anysolo", "toyGraphics")
     }
 
