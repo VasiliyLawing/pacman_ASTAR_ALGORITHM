@@ -1,4 +1,4 @@
-package level2v2.unit3.examples
+package level2v2.unit3.examples.e1
 
 
 import com.anysolo.toyGraphics.Graphics
@@ -8,7 +8,7 @@ import com.anysolo.toyGraphics.sleep
 import kotlin.random.Random
 
 
-data class Thingy(var x: Int, var y: Int)
+private data class Thingy(var x: Int, var y: Int)
 
 
 fun main() {

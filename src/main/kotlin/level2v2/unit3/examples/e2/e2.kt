@@ -1,21 +1,24 @@
-package level2v2.unit3.examples
+package level2v2.unit3.examples.e2
 
 
 import com.anysolo.toyGraphics.*
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-val flyierSize = 10
 
-data class Flyier(var x: Double, var y: Double, var leftBoost: Double = 0.0)
+private val flyierSize = 10
+
+private data class Thingy(var x: Int, var y: Int)
+
+private data class Flyier(var x: Double, var y: Double, var leftBoost: Double = 0.0)
 
 
-fun isCollision(flyier: Flyier, thingy: Thingy): Boolean =
+private fun isCollision(flyier: Flyier, thingy: Thingy): Boolean =
     thingy.x > flyier.x && thingy.x < flyier.x + flyierSize &&
     thingy.y > flyier.y && thingy.y < flyier.y + flyierSize
 
 
-fun limitFlier(flyier: Flyier, ymax: Double) {
+private fun limitFlier(flyier: Flyier, ymax: Double) {
     if(flyier.y < 0)
         flyier.y = 0.0
 
@@ -23,7 +26,7 @@ fun limitFlier(flyier: Flyier, ymax: Double) {
         flyier.y = ymax
 }
 
-fun updateFlyierBoost(flyier: Flyier) {
+private fun updateFlyierBoost(flyier: Flyier) {
     flyier.leftBoost += 0.1
     if(flyier.leftBoost > 10)
         flyier.leftBoost = 10.0
@@ -33,7 +36,7 @@ fun main() {
     val wnd = Window(1280, 720, buffered = true, background = Pal16.black)
     val keyboard = Keyboard(wnd)
 
-    val flyier = Flyier(wnd.width.toDouble() - flyierSize - 1, wnd.height.toDouble()- flyierSize - 1)
+    val flyier = Flyier(wnd.width.toDouble() - flyierSize - 1, wnd.height.toDouble() / 2)
 
     val list = mutableListOf<Thingy>()
 
@@ -83,6 +86,7 @@ fun main() {
         g.color = Pal16.brightGreen
         g.drawLine(finishLineX, 0,finishLineX, wnd.height-1)
 
+        g.setStrokeWidth(3)
         for (o in list) {
             g.color = Pal16.brightBlue
             g.drawDot(o.x, o.y)
