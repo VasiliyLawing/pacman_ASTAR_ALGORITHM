@@ -206,11 +206,12 @@ private fun strikeFlyierByStar(game: Game) {
 private fun updateAndCalculate(game: Game, wndWidth: Int, wndHeight: Int): String? {
     updateStars(game, wndWidth, wndHeight)
     updateFlyier(game.flyier)
-    updateGame(game)
 
     game.collidedStar = findStarCollision(game.stars, game.flyier)
     if(game.collidedStar != null)
         strikeFlyierByStar(game)
+
+    updateGame(game)
 
     return checkForEndOfGame(game, wndWidth)
 }
@@ -220,10 +221,8 @@ private fun updateAndCalculate(game: Game, wndWidth: Int, wndHeight: Int): Strin
 private fun playGame(wnd: Window, keyboard: Keyboard, game: Game): String {
     while(true) {
         processKeyboard(keyboard, game, wnd.height)
-        updateAndCalculate(game, wnd.width, wnd.height)
-
+        updateAndCalculate(game, wnd.width, wnd.height)?.let { return it }
         drawFrame(wnd, game)
-
 
         sleep(game.sleep.roundToInt())
     }
