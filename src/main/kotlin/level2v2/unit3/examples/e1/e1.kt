@@ -21,6 +21,7 @@ fun main() {
     while(true) {
         val g = Graphics(wnd)
         g.color = Pal16.brightBlue
+        g.setStrokeWidth(3)
 
         g.clear()
 
