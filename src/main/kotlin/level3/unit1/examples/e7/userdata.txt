@@ -1,0 +1,3 @@
+guest guest 0
+user secret 1
+admin super_secret 2

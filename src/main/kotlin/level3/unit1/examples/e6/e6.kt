@@ -1,4 +1,4 @@
-package level3.unit1.examples.e5
+package level3.unit1.examples.e6
 
 import com.anysolo.lib.student.console.enterString
 import level3Unit1Path
