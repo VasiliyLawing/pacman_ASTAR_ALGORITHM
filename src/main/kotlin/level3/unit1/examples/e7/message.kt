@@ -5,7 +5,7 @@ import level3Unit1Path
 import java.io.File
 
 
-private val messagesPath = "$level3Unit1Path/e7/messages/"
+private val messagesPath = "$level3Unit1Path/e7/msgData/"
 
 
 data class Message(val usernameFrom: String, val message: String)
