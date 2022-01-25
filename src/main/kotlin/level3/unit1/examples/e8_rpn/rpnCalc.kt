@@ -1,4 +1,4 @@
-package level3.unit1.examples.e8
+package level3.unit1.examples.e8_rpn
 
 
 typealias Stack = MutableList<Double>
@@ -30,7 +30,7 @@ private fun doCmd(stack: Stack, cmd: String) {
     }
 }
 
-fun rpcCalc(prgSource: String): Double {
+fun rpnCalc(prgSource: String): Double {
     val stack = mutableListOf<Double>()
     val prg = prgSource.split(" ")
 

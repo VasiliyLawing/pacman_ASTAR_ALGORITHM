@@ -1,10 +1,10 @@
-package level3.unit1.examples.e8
+package level3.unit1.examples.e8_rpn
 
 import com.anysolo.lib.student.console.enterString
 
 
 /***************************************
-RPC (reverse polish logic) calculator
+Reverse Polish notation (RPN) calculator
 
 Calculates using Double type.
 Supported operators: + - * /
@@ -28,6 +28,6 @@ fun main() {
         if(prg.isEmpty())
             break
 
-        println(rpcCalc(prg))
+        println(rpnCalc(prg))
     }
 }
