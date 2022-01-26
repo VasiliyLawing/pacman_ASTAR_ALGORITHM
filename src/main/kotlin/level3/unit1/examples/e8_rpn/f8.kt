@@ -14,16 +14,16 @@ Usual: 2 + 3
 RPC: 2 3 +
 
 Usual: (2 + 3) * 3
-RPC 2 3 + 3 *
+RPN 2 3 + 3 *
 ****************************************/
 
 
 fun main() {
-    println("RPC Micro v1.0")
+    println("RPN Micro v1.0")
     println("Please enter program or empty line to exit")
 
     while(true) {
-        val prg = enterString("rpc> ", canBeEmpty = true)
+        val prg = enterString("rpn> ", canBeEmpty = true)
 
         if(prg.isEmpty())
             break

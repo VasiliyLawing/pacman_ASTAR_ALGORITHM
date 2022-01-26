@@ -30,6 +30,7 @@ private fun doCmd(stack: Stack, cmd: String) {
     }
 }
 
+
 fun rpnCalc(prgSource: String): Double {
     val stack = mutableListOf<Double>()
     val prg = prgSource.split(" ")
