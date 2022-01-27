@@ -1,4 +1,4 @@
-package level3.unit1.examples.e7
+package level3.unit2.examples.e7
 
 
 import level3Unit1Path
@@ -16,11 +16,13 @@ fun loadUsers(): Users {
     for(line in usersDataFile.readLines()) {
         val columns = line.split(" ")
 
-        usersData.add(UserData(
+        usersData.add(
+            UserData(
             username = columns[0],
             password = columns[1],
             accessLevel = columns[2].toInt()
-        ))
+        )
+        )
     }
 
     return usersData
