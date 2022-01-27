@@ -1,4 +1,4 @@
-package level3.unit1.examples.e8_rpn
+package level3.unit1.examples.e4_rpn
 
 import com.anysolo.lib.student.console.enterString
 

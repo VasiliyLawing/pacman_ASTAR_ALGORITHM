@@ -1,4 +1,4 @@
-package level3.unit1.examples.e8_rpn
+package level3.unit1.examples.e4_rpn
 
 
 typealias Stack = MutableList<Double>
@@ -7,15 +7,27 @@ private fun isOp(op: String) = op in listOf("+", "-", "*", "/")
 
 
 private fun push(stack: Stack, num: Double) = stack.add(num)
-private fun pop(stack: Stack): Double = stack.removeLast()
+
+private fun pop(stack: Stack): Double? {
+    if(stack.isEmpty())
+        return null
+
+    return stack.removeLast()
+}
 
 
 private fun doOp(stack: Stack, op: String) {
+    val arg1 = pop(stack)
+    val arg2 = pop(stack)
+
+    if(arg1 == null || arg2 == null)
+        return
+
     when(op) {
-        "+" -> push(stack, pop(stack) + pop(stack))
-        "-" -> push(stack, pop(stack) - pop(stack))
-        "*" -> push(stack, pop(stack) * pop(stack))
-        "/" -> push(stack, pop(stack) / pop(stack))
+        "+" -> push(stack,  arg1 + arg2)
+        "-" -> push(stack, arg1 - arg2)
+        "*" -> push(stack, arg1 * arg2)
+        "/" -> push(stack, arg1 / arg2)
     }
 }
 
@@ -31,7 +43,7 @@ private fun doCmd(stack: Stack, cmd: String) {
 }
 
 
-fun rpnCalc(prgSource: String): Double {
+fun rpnCalc(prgSource: String): Double? {
     val stack = mutableListOf<Double>()
     val prg = prgSource.split(" ")
 

@@ -1,7 +1,7 @@
 package level3.unit1.examples.e3_stupidBot
 
 import com.anysolo.lib.student.console.enterString
-import level3.unit1.examples.e8_rpn.rpnCalc
+import level3.unit1.examples.e4_rpn.rpnCalc
 
 
 data class BotData(var name: String? = null, var debugMode: Boolean = false)
@@ -10,7 +10,7 @@ data class BotData(var name: String? = null, var debugMode: Boolean = false)
 private const val incorrectCommandFormatError = "Incorrect command format"
 
 
-fun doNameCmd(botData: BotData, args: List<String>) {
+private fun doNameCmd(botData: BotData, args: List<String>) {
     if(args.isEmpty()) {
         println(incorrectCommandFormatError)
         return
@@ -22,7 +22,7 @@ fun doNameCmd(botData: BotData, args: List<String>) {
 }
 
 
-fun doDebugCmd(botData: BotData, args: List<String>) {
+private fun doDebugCmd(botData: BotData, args: List<String>) {
     if(args.isEmpty()) {
         println(incorrectCommandFormatError)
         return
@@ -36,14 +36,38 @@ fun doDebugCmd(botData: BotData, args: List<String>) {
 }
 
 
-fun doHelpCmd(cmdItems: List<String>) {
+private fun doHelpCmd(cmdItems: List<String>) {
     println("""
         Here is how to talk with me:
             bye - leave me along ;(
             name <you name> - tell me your name
             calc <RPN math expression>
-            debug on|enable|off|disable                       
+            debug on|enable|off|disable - turn on/off debug prints
+            help - print this help                                   
     """.trimIndent())
+}
+
+
+private fun startWithName(name: String?) {
+    if(name != null) {
+        print("$name, ")
+    }
+}
+
+
+private fun doCalcCmd(botData: BotData, nprExpr: String) {
+    val res = rpnCalc(nprExpr)
+    if(res != null)
+        println("It would be $res")
+    else {
+        startWithName(botData.name)
+        println("the expression: \"$nprExpr\" is not a valid NPR expression for my humble calculator")
+    }
+}
+
+private fun doUnknownCommand(botData: BotData, cmd: String) {
+    startWithName(botData.name)
+    println("I do not understand the command you entered: $cmd")
 }
 
 
@@ -59,13 +83,15 @@ fun stupidBot(botData: BotData, commandString: String): Boolean {
 
     val cmd = cmdItems[0]
     val args = cmdItems.subList(1, cmdItems.size)
+    val argStr = args.joinToString(" ")
 
     when(cmd) {
         "bye" -> return true
         "help" -> doHelpCmd(args)
         "name" -> doNameCmd(botData, args)
         "debug" -> doDebugCmd(botData, args)
-        "calc" -> println(rpnCalc(args.joinToString(" ")))
+        "calc" -> doCalcCmd(botData, argStr)
+        else -> doUnknownCommand(botData, cmd)
     }
 
     return false
@@ -75,6 +101,7 @@ fun stupidBot(botData: BotData, commandString: String): Boolean {
 private fun doWelcome() {
     println("Hi, I am stupid bot version 1.0")
 }
+
 
 fun main() {
     val botData = BotData()
