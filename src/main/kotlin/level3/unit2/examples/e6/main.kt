@@ -1,4 +1,4 @@
-package level3.unit2.examples.e7
+package level3.unit2.examples.e6
 
 
 import com.anysolo.lib.student.console.enterString

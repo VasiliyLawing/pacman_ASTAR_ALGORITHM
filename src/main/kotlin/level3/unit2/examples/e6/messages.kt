@@ -1,4 +1,4 @@
-package level3.unit2.examples.e7
+package level3.unit2.examples.e6
 
 
 import level3Unit1Path
