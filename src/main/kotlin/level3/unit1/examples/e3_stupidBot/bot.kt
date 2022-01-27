@@ -41,6 +41,7 @@ fun doHelpCmd(cmdItems: List<String>) {
         Here is how to talk with me:
             bye - leave me along ;(
             name <you name> - tell me your name
+            calc <RPN math expression>
             debug on|enable|off|disable                       
     """.trimIndent())
 }
