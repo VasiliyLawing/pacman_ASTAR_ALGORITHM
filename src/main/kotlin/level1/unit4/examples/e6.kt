@@ -18,7 +18,7 @@ fun main() {
     val keyboard = Keyboard(wnd)
 
     var bulletX = 0
-    var bulletY = 0
+    var bulletY =  0
     var bulletFlying = false
     val bulletHeight = 10
     val bulletWidth = 6

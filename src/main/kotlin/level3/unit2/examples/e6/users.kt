@@ -10,7 +10,7 @@ data class UserData(val username: String, val password: String, val accessLevel:
 
 
 fun loadUsers(): Users {
-    val usersDataFile = File("$level3Unit1Path/e7/userdata.txt")
+    val usersDataFile = File("$level3Unit1Path/e6/userdata.txt")
     val usersData = mutableListOf<UserData>()
 
     for(line in usersDataFile.readLines()) {
