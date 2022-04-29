@@ -1,4 +1,4 @@
-Write function "makeFunnyStr" which a String and returns reversed string where has every other character capitalized.
+rite function "makeFunnyStr" which a String and returns string where has every other character capitalized.
 
 Example:
 Test -> TeSt

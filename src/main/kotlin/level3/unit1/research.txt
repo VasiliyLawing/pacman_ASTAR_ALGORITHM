@@ -1,0 +1,4 @@
+Search and read about following Kotlin String functions:
+endsWith, startsWith, indexOf
+
+And Kotlin class Pair and how to use it with "to"

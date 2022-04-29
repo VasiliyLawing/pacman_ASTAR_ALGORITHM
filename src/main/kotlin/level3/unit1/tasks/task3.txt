@@ -1,0 +1,14 @@
+write function:
+fun parsePosCommand(str: String): Pos?
+
+which parses a string and return Pos.
+Pos class imported as:
+import com.anysolo.toyGraphics.Pos
+
+
+Test you function like this:
+import prgb1.solutions.level3.unit1.task3.testTask3
+
+fun main() {
+    testTask3(::parsePosCommand)
+}
