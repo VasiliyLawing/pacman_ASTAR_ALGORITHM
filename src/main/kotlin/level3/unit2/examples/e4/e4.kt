@@ -1,6 +1,6 @@
 package level3.unit2.examples.e4
 
-import level3Unit1Path
+import level3Unit2Path
 import java.io.File
 
 
@@ -16,7 +16,7 @@ private fun printMenu(menu: MyMenu) {
 }
 
 private fun loadMenu(menuName: String): MyMenu {
-    val menuFile = File("$level3Unit1Path/e4/$menuName.menu")
+    val menuFile = File("$level3Unit2Path/e4/$menuName.menu")
     return menuFile.readLines()
 }
 

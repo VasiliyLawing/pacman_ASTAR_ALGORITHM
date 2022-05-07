@@ -1,11 +1,11 @@
 package level3.unit2.examples.e6
 
 
-import level3Unit1Path
+import level3Unit2Path
 import java.io.File
 
 
-private val messagesPath = "$level3Unit1Path/e7/msgData/"
+private val messagesPath = "$level3Unit2Path/e7/msgData/"
 
 
 data class Message(val usernameFrom: String, val message: String)

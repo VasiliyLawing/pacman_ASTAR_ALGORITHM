@@ -1,7 +1,7 @@
 package level3.unit2.examples.e5
 
 import com.anysolo.lib.student.console.enterString
-import level3Unit1Path
+import level3Unit2Path
 import java.io.File
 
 
@@ -20,7 +20,7 @@ private fun printMenu(menu: Menu) {
 }
 
 private fun loadMenu(menuName: String): Menu {
-    val menuFile = File("$level3Unit1Path/e5/$menuName.menu")
+    val menuFile = File("$level3Unit2Path/e5/$menuName.menu")
 
     val menu = mutableListOf<MenuItem>()
 

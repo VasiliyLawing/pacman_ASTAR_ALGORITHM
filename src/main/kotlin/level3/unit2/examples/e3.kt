@@ -1,6 +1,6 @@
 package level3.unit2.examples
 
-import level3Unit1Path
+import level3Unit2Path
 import java.io.File
 
 
@@ -25,7 +25,7 @@ fun main() {
         }
     }
 
-    val file = File("$level3Unit1Path/$outputFilename")
+    val file = File("$level3Unit2Path/$outputFilename")
     file.writeText(lines.joinToString("\n"))
 
     println("${lines.size} lines written in file $outputFilename")

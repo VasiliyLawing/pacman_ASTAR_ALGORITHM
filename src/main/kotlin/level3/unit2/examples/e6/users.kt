@@ -1,7 +1,7 @@
 package level3.unit2.examples.e6
 
 
-import level3Unit1Path
+import level3Unit2Path
 import java.io.File
 
 typealias Users = List<UserData>
@@ -10,7 +10,7 @@ data class UserData(val username: String, val password: String, val accessLevel:
 
 
 fun loadUsers(): Users {
-    val usersDataFile = File("$level3Unit1Path/e6/userdata.txt")
+    val usersDataFile = File("$level3Unit2Path/e6/userdata.txt")
     val usersData = mutableListOf<UserData>()
 
     for(line in usersDataFile.readLines()) {
