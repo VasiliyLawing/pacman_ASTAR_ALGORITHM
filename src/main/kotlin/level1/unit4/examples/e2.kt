@@ -31,7 +31,7 @@ fun main() {
 
         // Here we use "if" without "else". It either executes one given line of code or nothing.
         if(x == 0 || x == wnd.width - racketWidth)
-            speed = -speed // unary operator "-" convert positive speed into negative and negative into positive
+            speed *= -1 // convert positive speed into negative and negative into positive
 
         x += speed
 

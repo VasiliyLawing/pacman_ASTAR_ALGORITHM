@@ -10,7 +10,7 @@ import kotlin.math.sqrt
 
 /*
 We can create a function returning some result.
-Here we calculate distance between two two points.
+Here we calculate distance between two points.
 We use "return" to return the result.
 We also must declare the type of the result of our function ": Double" after function anme and arguments.
  */

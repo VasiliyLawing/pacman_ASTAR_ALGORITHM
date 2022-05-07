@@ -5,12 +5,11 @@ fun main() {
     val l = mutableListOf(1, 2, 3, 4, 5)
     println(l)
 
-    // Remove an list item by its index. Index starts with 0
-    // This works fast
-    l.removeAt(1)
+    // Remove item from list.
+    l.remove(4)
     println(l)
 
-    // Search a value in the list and then remove it. This will be slow for a long list.
-    l.remove(4)
+    // Remove a list item by its index. Index starts with 0
+    l.removeAt(1)
     println(l)
 }
