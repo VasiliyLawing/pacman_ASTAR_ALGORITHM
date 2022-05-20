@@ -13,7 +13,7 @@ fun main() {
 
     val y = wnd.height/2
     var x = 1
-    var speed =10
+    var speed = 1
 
     val racketHeight = 10
     val racketWidth = 50
