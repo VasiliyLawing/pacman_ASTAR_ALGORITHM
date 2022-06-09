@@ -16,5 +16,5 @@ Test you function like this:
 import prgb1.solutions.level3.unit1.task4.testTask4
 
 fun main() {
-    testTask3(::parseTemplate)
+    testTask4(::parseTemplate)
 }
