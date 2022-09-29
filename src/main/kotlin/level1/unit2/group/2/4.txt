@@ -1,4 +1,0 @@
-fun main() {
-    val res: Int = 3.0 / 2
-    println(res)
-}

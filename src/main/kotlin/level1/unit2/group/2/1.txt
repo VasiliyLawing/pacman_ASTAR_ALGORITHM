@@ -1,6 +1,0 @@
-fun main() {
-    val n1 = "17"
-    val n2 = "5"
-    val res = n1 + n2
-    println(res)
-}

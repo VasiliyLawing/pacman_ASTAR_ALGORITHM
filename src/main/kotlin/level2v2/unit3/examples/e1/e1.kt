@@ -12,6 +12,12 @@ private data class Thingy(var x: Int, var y: Int)
 
 
 fun main() {
+    val allNumbers = listOf(11, 100, 300)
+    for (one in allNumbers) {
+        println(one)
+    }
+
+
     val wnd = Window(1280, 720, buffered = true, background = Pal16.black)
 
     val list = mutableListOf<Thingy>()

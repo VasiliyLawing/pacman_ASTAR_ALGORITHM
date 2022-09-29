@@ -13,7 +13,7 @@ fun main() {
     */
 
     println(1)
-    // Numbers without "." are integer numbers. In mathematics they called whole numbers.
+    // Numbers without "." are integer numbers. In mathematics, they called whole numbers.
     // 1 is a value of Int type
 
     println(3.14)

@@ -1,7 +1,7 @@
-package level3.unit1.examples.e3_stupidBot
+package level3.unit1.examples.e4_stupidBot
 
 import com.anysolo.lib.student.console.enterString
-import level3.unit1.examples.e4_rpn.rpnCalc
+import level3.unit1.examples.e3_rpn.rpnCalc
 
 
 data class BotData(var name: String? = null, var debugMode: Boolean = false)
