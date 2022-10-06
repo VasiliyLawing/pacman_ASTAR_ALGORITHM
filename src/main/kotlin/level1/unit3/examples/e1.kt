@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit3.examples
 
 import com.anysolo.toyGraphics.Graphics
@@ -17,7 +22,7 @@ fun main() {
     val y = wnd.height/2
 
     // Define a variable "x"
-    // Variable is is like a value except you can reassign it a different value any time.
+    // Variable is like a value except you can reassign it a different value any time.
     // You use variable ("var") only if you need to reassign the value.
     // If you are not sure, always try to use values ("val").
     var x = 0

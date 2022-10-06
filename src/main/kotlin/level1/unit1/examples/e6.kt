@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit1.examples
 
 
@@ -34,12 +39,12 @@ fun main() {
     val g = Graphics(wnd)
 
     /*
-     Y axis goes from up to down
-     X axis goes from left to right
+     Y-axis goes from up to down
+     X-axis goes from left to right
 
-     Objects usually have more then just one value inside.
+     Objects usually have more than just one value inside.
 
-     Below you can see we values "g.color", "wnd.width" and wnd.height".
+     Below you can see "g.color", "wnd.width" and wnd.height".
      "g.color" means value "color" inside object "g".
      And width and height exists inside object "wnd".
 

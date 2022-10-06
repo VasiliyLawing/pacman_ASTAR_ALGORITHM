@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit4.examples
 
 
@@ -24,7 +29,7 @@ fun main() {
         val key = keyboard.getPressedKey()
 
         // Process a key if variable "key" is not null
-        // We use {} block when we have more then one line of code inside "if".
+        // We use {} block when we have more than one line of code inside "if".
         if(key != null) {
             // exit from the loop if key 'Q' was pressed.
             // 'Q' is a Character, key.code is an Integer. So we need to convert 'Q' to an Integer
@@ -43,7 +48,7 @@ fun main() {
 
         gc.close()
 
-        if(x == 0 || x == wnd.width)
+        if(x <= 0 || x >= wnd.width)
             speed = -speed
 
         x += speed

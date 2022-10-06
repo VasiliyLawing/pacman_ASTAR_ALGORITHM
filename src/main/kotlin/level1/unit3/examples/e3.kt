@@ -1,49 +1,49 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit3.examples
-
-
-import kotlin.math.roundToInt
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
 import com.anysolo.toyGraphics.Window
+
 import com.anysolo.toyGraphics.sleep
 
-
-// Here we introduce acceleration in motion of your object.
-// You can google something like "velocity & acceleration" if you do not know what acceleration is.
 
 fun main() {
     val wnd = Window(800, 600, buffered = true)
 
-    val particleWidth = 10
-    val initialParticleHeight = 2
+    while (true) {
+        var obj1X = 0
+        val obj1Y = wnd.height/2
 
-    // Try to change acceleration to -0.07 and see what happens.
-    val acceleration = -0.06
+        val obj2X = wnd.width/2
+        var obj2Y = 0
 
-    var growK = 1.0
-    var speed = 10.0
-    var x = 0.0
-    val growKStep = 0.7
+        val objectsSize = 25
 
-    while (x < wnd.width - particleWidth) {
-        val gc = Graphics(wnd)
+        while (obj1X < wnd.width || obj2Y < wnd.height) {
+            val gc = Graphics(wnd)
 
-        gc.setStrokeWidth(3)
-        gc.color = Pal16.blue
+            gc.setStrokeWidth(3)
+            gc.color = Pal16.blue
 
-        gc.clear()
+            gc.clear()
 
-        val particleHeight = (initialParticleHeight * growK).roundToInt()
-        gc.drawRect(x.roundToInt(), wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
+            gc.color = Pal16.blue
+            gc.drawRect(obj1X, obj1Y, objectsSize, objectsSize, fill = true)
 
-        gc.close()
+            gc.color = Pal16.green
+            gc.drawRect(obj2X, obj2Y, objectsSize, objectsSize, fill = true)
 
-        x += speed
-        speed += acceleration
-        growK += growKStep
+            gc.close()
 
-        // Sleep for 33 milliseconds gives something about 30 frames per second.
-        sleep(33)
+            obj1X = obj1X + 2
+            obj2Y = obj2Y + 1
+
+            sleep(10)
+        }
     }
 }

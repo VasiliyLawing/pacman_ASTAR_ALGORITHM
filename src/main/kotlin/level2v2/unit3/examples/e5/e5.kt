@@ -1,5 +1,8 @@
-package level2v2.unit3.examples.e5
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
 
+package level2v2.unit3.examples.e5
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16

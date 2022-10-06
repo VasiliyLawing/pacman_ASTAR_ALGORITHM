@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit4.examples
 
 import com.anysolo.toyGraphics.Graphics
@@ -30,7 +35,7 @@ fun main() {
         gc.close()
 
         // Here we use "if" without "else". It either executes one given line of code or nothing.
-        if(x == 0 || x == wnd.width - racketWidth)
+        if(x <= 0 || x >= wnd.width - racketWidth)
             speed *= -1 // convert positive speed into negative and negative into positive
 
         x += speed

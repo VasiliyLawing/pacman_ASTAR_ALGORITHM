@@ -1,5 +1,9 @@
-package level2.unit3.examples
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
 
+
+package level2.unit3.examples
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16

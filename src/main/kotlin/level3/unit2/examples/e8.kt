@@ -1,6 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
 package level3.unit2.examples
-
-
 
 fun main() {
     // You can use Pair data class when you need a simple two value class

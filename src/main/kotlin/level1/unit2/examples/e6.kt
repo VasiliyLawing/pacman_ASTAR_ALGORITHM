@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit2.examples
 
 import com.anysolo.toyGraphics.Graphics
@@ -18,7 +23,7 @@ fun main() {
 
     while (x < wnd.width) {
         // Try to uncomment one of the following 4 lines at a time and see how it works.
-        // Try to change numbers in this formulas.
+        // Try to change numbers in these formulas.
         val y = x * 0.8
 //        val y = x * x / 100
 //        val y = 1 / x * 10000

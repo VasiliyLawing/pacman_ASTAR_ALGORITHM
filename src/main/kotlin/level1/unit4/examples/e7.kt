@@ -1,5 +1,9 @@
-package level1.unit4.examples
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
 
+
+package level1.unit4.examples
 import com.anysolo.toyGraphics.*
 
 // See how you can limit speed of the racket using Kotlin "if expression"

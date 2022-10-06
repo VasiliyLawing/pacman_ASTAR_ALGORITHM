@@ -1,3 +1,8 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit2.examples
 
 import com.anysolo.toyGraphics.Graphics
@@ -17,11 +22,11 @@ fun main() {
     var y = 50
 
     // "while" is a loop operator which repeats the block of code inside "{}" while
-    // the given condition is true. Here the condition is to repeat while y is less then 600
+    // the given condition is true. Here the condition is to repeat while y is less than 600
     // You can use following operator to compare something in the condition:
-    // "<" - less then
+    // "<" - less than
     // "<=" - less or equal
-    // ">" - greater then
+    // ">" - greater than
     // ">=" - greater or equal
     // "==" - equals
     // "!=" not equals

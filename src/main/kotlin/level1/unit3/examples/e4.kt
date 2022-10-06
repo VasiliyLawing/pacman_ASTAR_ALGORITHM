@@ -1,9 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
 package level1.unit3.examples
 
-/*
- Demonstration of how you can simulate gravity.
- */
 
+// We have to import roundToInt before we can use it.
+// But if you comment this line out you see IDEA offer you to insert this import automatically
 import kotlin.math.roundToInt
 
 import com.anysolo.toyGraphics.Graphics
@@ -12,29 +16,42 @@ import com.anysolo.toyGraphics.Window
 import com.anysolo.toyGraphics.sleep
 
 
+/*
+Here we use more variables to add more dynamic to our example. Read the code carefully.
+Understand what happens here. Debug it if you need it to understand how it works.
+*/
+
 fun main() {
     val wnd = Window(800, 600, buffered = true)
 
-    val sqaureSize = 10
+    val particleWidth = 10
+    val initialParticleHeight = 5
 
-    val acceleration = 0.06
-    val x = wnd.width/2
-    var y = (wnd.height-1).toDouble()
-    var speed = -8.0
+    // we use Double type for more precise calculation
+    var growK = 1.0
 
-    while (true) {
+    var x = 0
+
+    while(x < wnd.width - particleWidth) {
         val gc = Graphics(wnd)
+
+        gc.setStrokeWidth(3)
         gc.color = Pal16.blue
+
         gc.clear()
 
-        gc.drawRect(x, y.roundToInt(), sqaureSize, sqaureSize)
+        // The next arithmetic expression uses Double variable "growK"
+        // The result of initialParticleHeight * growK is a Double value.
+        // Coordinates are Int, so we call Double.rountToInt function to make the conversion.
+        val particleHeight = (initialParticleHeight * growK).roundToInt()
+
+        gc.drawRect(x, wnd.height/2 - particleHeight/2, particleWidth, particleHeight)
 
         gc.close()
 
-        y += speed
-        speed += acceleration
+        growK += 0.08
+        x++
 
-        // Sleep for 33 milliseconds gives something about 30 frames per second.
-        sleep(33)
+        sleep(10)
     }
 }
