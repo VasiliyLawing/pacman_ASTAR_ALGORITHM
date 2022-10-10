@@ -11,13 +11,13 @@ import com.anysolo.toyGraphics.Window
 
 
 /*
-Class Pos is defined in e1.kt but we can use it here without any additional actions.
+Class Pos is defined in e3.kt but we can use it here without any additional actions.
 All you define (variables, classes, functions) visible withing the whole package.
 In our case class "Pos" is visible inside any file in package "level2.unit2.examples".
  */
 
-val tankLength = 100
-val tankHeight = 50
+private val tankLength = 100
+private val tankHeight = 50
 
 
 /*
