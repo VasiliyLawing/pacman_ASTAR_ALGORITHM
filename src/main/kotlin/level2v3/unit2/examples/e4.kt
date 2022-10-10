@@ -37,35 +37,27 @@ private fun drawMyObject(gc: Graphics, x: Double, y: Double, tick: Int) {
 
 
 private fun processKeyboard(keyboard: Keyboard, xspeed: Double): Double {
-    val key = keyboard.getPressedKey()
+    // shorter version using elvis operator
+    val key = keyboard.getPressedKey() ?: return xspeed
 
-    if(key == null) {
-        return xspeed
+    // using when expression instead of if
+    return when(key.code) {
+        KeyCodes.LEFT   -> xspeed - 0.1
+        KeyCodes.RIGHT  -> xspeed + 0.1
+        else            -> xspeed
     }
-
-    var newXspeed = xspeed
-
-    when(key.code) {
-        KeyCodes.LEFT -> newXspeed -= 0.1
-        KeyCodes.RIGHT -> newXspeed += 0.1
-    }
-
-    return newXspeed
 }
 
 
 private fun limitSpeed(speed: Double): Double {
-    var newSpeed = speed
-
     val speedLimit = 5.0
 
-    if(newSpeed > speedLimit)
-        newSpeed = speedLimit
-
-    else if(newSpeed < -speedLimit)
-        newSpeed = -speedLimit
-
-    return newSpeed
+    // using when expression instead of if
+    return when {
+        speed > speedLimit  -> speedLimit
+        speed < -speedLimit -> -speedLimit
+        else                -> speed
+    }
 }
 
 
@@ -80,8 +72,8 @@ fun main() {
     var tickCounter = 1.0
 
     while (true) {
-        xspeed = processKeyboard(keyboard, xspeed)
-        xspeed = limitSpeed(xspeed)
+        // give result of one function into another function
+        xspeed = limitSpeed(processKeyboard(keyboard, xspeed))
 
         val gc = Graphics(wnd)
         gc.clear()
