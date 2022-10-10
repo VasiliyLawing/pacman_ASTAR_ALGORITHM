@@ -14,7 +14,7 @@ private val tankLength = 100
 private val tankHeight = 50
 
 
-fun drawTank(g: Graphics, x: Int, y: Int) {
+private fun drawTank(g: Graphics, x: Int, y: Int) {
     g.color = Pal16.black
     g.setStrokeWidth(2)
 

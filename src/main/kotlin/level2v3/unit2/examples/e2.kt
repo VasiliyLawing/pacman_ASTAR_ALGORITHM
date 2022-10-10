@@ -3,7 +3,7 @@
  ******************************************************************************/
 
 
-package level2v3.unit1.examples
+package level2v3.unit2.examples
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16
@@ -13,14 +13,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 
-/*
-We can create a function returning some result.
-Here we calculate distance between two points.
-We use "return" to return the result.
-We also must declare the type of the result of our function ": Double" after function name and arguments.
- */
-
-fun calcDistance(x1: Int, y1: Int, x2: Int, y2: Int): Double {
+private fun calcDistance(x1: Int, y1: Int, x2: Int, y2: Int): Double {
     val xDelta = (x1 - x2).toDouble()
     val yDelta = (y1 - y2).toDouble()
 

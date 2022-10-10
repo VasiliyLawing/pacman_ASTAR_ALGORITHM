@@ -6,6 +6,7 @@ package level2v3.unit1.examples
 
 
 // It is a function. It contains a bunch of code and it has a name.
+// "private" is optional, it makes it visible only in the current file.
 private fun sayHello() {
     println("Hello")
 }
