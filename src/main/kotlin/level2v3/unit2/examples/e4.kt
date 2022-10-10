@@ -1,95 +1,63 @@
 /*******************************************************************************
- * Copyright (c) 2022.  Anysolo LLC
+ * Copyright (c) 2019-2022.  Anysolo LLC
  ******************************************************************************/
+
 
 package level2v3.unit2.examples
 
-import com.anysolo.toyGraphics.*
-import kotlin.math.abs
-import kotlin.math.roundToInt
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
+import com.anysolo.toyGraphics.sleep
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 
-private fun drawMyObject(gc: Graphics, x: Double, y: Double, tick: Int) {
-    val baseSize = 1.0
-    val tickLimit = 100
-    val tickK = tick % tickLimit
+private fun calcDistance(x1: Int, y1: Int, x2: Int, y2: Int): Double {
+    val xDelta = (x1 - x2).toDouble()
+    val yDelta = (y1 - y2).toDouble()
 
-    val width = baseSize * tickK
-    val height = baseSize * (tickLimit - tickK)
-
-    // Draw two ovals. Second ovals is kinda "flipped". So it uses height instead of width and width instead of height.
-    gc.color = Pal16.blue
-    gc.drawOval((x - width/2).roundToInt(), (y - height/2).roundToInt(),  width.roundToInt(), height.roundToInt())
-
-    gc.color = Pal16.green
-    gc.drawOval(
-        (x - height/2).roundToInt(), (y - width/2).roundToInt(),
-        height.roundToInt(), width.roundToInt()
-    )
-
-    val circleSize = baseSize * tickK / 10
-    gc.color = Pal16.brightRed
-    gc.drawOval(
-        (x - circleSize/2).roundToInt(), (y - circleSize/2).roundToInt(),
-        circleSize.roundToInt(), circleSize.roundToInt(), fill = true
-    )
-}
-
-
-private fun processKeyboard(keyboard: Keyboard, xspeed: Double): Double {
-    // shorter version using elvis operator
-    val key = keyboard.getPressedKey() ?: return xspeed
-
-    // using when expression instead of if
-    return when(key.code) {
-        KeyCodes.LEFT   -> xspeed - 0.1
-        KeyCodes.RIGHT  -> xspeed + 0.1
-        else            -> xspeed
-    }
-}
-
-
-private fun limitSpeed(speed: Double): Double {
-    val speedLimit = 5.0
-
-    // using when expression instead of if
-    return when {
-        speed > speedLimit  -> speedLimit
-        speed < -speedLimit -> -speedLimit
-        else                -> speed
-    }
+    return sqrt(xDelta.pow(2) + yDelta.pow(2))
 }
 
 
 fun main() {
-    val wnd = Window(800, 600, buffered = true)
-    val keyboard = Keyboard(wnd)
+    val wnd = Window(1280, 720, buffered = true, background = Pal16.black)
 
-    var x = wnd.width / 2.0
-    val y = wnd.height/2.0
-    var xspeed = 0.0
+    val dot1X = wnd.width/2
+    val dot1Y = wnd.height/2
 
-    var tickCounter = 1.0
+    var dot2X = 0
+    var dot2Y = 0
 
-    while (true) {
-        // give result of one function into another function
-        xspeed = limitSpeed(processKeyboard(keyboard, xspeed))
+    val blowRadius = 50
+    val triggerDistance = 75
 
-        val gc = Graphics(wnd)
-        gc.clear()
+    while(true) {
+        val g = Graphics(wnd)
+        g.setStrokeWidth(4)
+        g.clear()
 
-        drawMyObject(gc, x, y, tickCounter.roundToInt())
+        g.color = Pal16.blue
+        g.drawDot(dot1X, dot1Y)
 
-        gc.close()
+        g.color = Pal16.red
+        g.drawDot(dot2X, dot2Y)
 
-        tickCounter += abs(xspeed) * 2
+        dot2X += 2
+        dot2Y += 1
 
-        x += xspeed
+        val distance = calcDistance(dot1X, dot1Y, dot2X, dot2Y)
 
-        if(x < 0 || x > wnd.width) {
-            xspeed *= -1
+        if(distance < triggerDistance) {
+            g.color = Pal16.brightRed
+            g.drawOval(dot1X - blowRadius, dot1Y - blowRadius, blowRadius*2, blowRadius*2)
         }
 
-        sleep(5)
+        g.color = Pal16.white
+        g.drawText(50, wnd.height-100, "Distance: $distance")
+
+        g.close()
+        sleep(15)
     }
 }
