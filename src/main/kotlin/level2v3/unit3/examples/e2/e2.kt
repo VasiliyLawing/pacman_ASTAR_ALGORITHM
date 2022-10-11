@@ -2,16 +2,24 @@
  * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
 
-package level2v3.unit3.examples.e1
+package level2v3.unit3.examples.e2
 
 import com.anysolo.toyGraphics.*
 
+// We can import class from other package
+import level2v3.unit3.examples.e1.Thingy
 
-// Data class combines several variables together.
-// Data class is not a variable, it is like a blueprint you use to create variables.
-// For every variable you have to specify its type after ":"
-// BTW a data class is a "type".
-data class Thingy(var x: Int, var y: Int, var speedX: Int, var speedY: Int, val color: Color)
+
+private fun drawThingy(gc: Graphics, thingy: Thingy) {
+    gc.color = thingy.color
+    gc.drawRect(thingy.x, thingy.y, 10, 10, fill = true)
+}
+
+
+private fun moveThingy(thingy: Thingy) {
+    thingy.x += thingy.speedX
+    thingy.y += thingy.speedY
+}
 
 
 fun main() {
@@ -36,20 +44,13 @@ fun main() {
         val gc = Graphics(wnd)
         gc.clear()
 
-        // You can access any variables inside our variables using "."
-        gc.color = thingy1.color
-        gc.drawRect(thingy1.x, thingy1.y, 10, 10, fill = true)
-
-        gc.color = thingy2.color
-        gc.drawRect(thingy2.x, thingy2.y, 10, 10, fill = true)
+        drawThingy(gc, thingy1)
+        drawThingy(gc, thingy2)
 
         gc.close()
 
-        thingy1.x += thingy1.speedX
-        thingy1.y += thingy1.speedY
-
-        thingy2.x += thingy2.speedX
-        thingy2.y += thingy2.speedY
+        moveThingy(thingy1)
+        moveThingy(thingy2)
 
         sleep(10)
     }
