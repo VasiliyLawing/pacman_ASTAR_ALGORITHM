@@ -4,7 +4,7 @@
 
 // Implement function "limitX"
 
-package prgb1.solutions.level2v3.unit2
+package level2v3.unit2.tasks
 
 import com.anysolo.toyGraphics.*
 
