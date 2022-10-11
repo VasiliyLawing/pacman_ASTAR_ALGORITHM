@@ -10,6 +10,7 @@ import com.anysolo.toyGraphics.*
 import level2v3.unit3.examples.e1.Thingy
 
 
+// We can pass thingy to functions.
 private fun drawThingy(gc: Graphics, thingy: Thingy) {
     gc.color = thingy.color
     gc.drawRect(thingy.x, thingy.y, 10, 10, fill = true)
