@@ -4,15 +4,10 @@
 
 package level2v3.unit1.examples
 
-import kotlin.math.abs
-import kotlin.math.sign
+// You can use not private function from other file in the same package.
+// You also can use a not private function from other packages. but you need to import it.
+// Intellij Idea automatically offers you to import it.
 
 fun main() {
-    // You can use abs to get number without a sign, always positive
-    println(abs(7.0))
-    println(abs(-7.0))
-
-    // You can get sign of your number without number itself.
-    println(sign(7.0))
-    println(sign(-7.0))
+    println(numberInPowerOf(2, 3))
 }
