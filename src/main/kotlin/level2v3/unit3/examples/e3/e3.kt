@@ -9,7 +9,8 @@ private data class Pos(val x: Int, val y: Int)
 
 
 fun main() {
-    // Create a variable of Pos type
+    // Create a variable of Pos type. Please notice, we use name of the class as a function to create
+    // an object of this class.
     val playerPos = Pos(300,600)
 
     // Print it just for debugging porpoise.
