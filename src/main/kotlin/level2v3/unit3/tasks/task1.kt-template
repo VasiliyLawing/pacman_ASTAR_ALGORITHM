@@ -1,0 +1,20 @@
+/*******************************************************************************
+ * Copyright (c) 2022.  Anysolo LLC
+ ******************************************************************************/
+
+package level2v3.unit3.tasks
+
+import com.anysolo.toyGraphics.sleep
+
+
+fun main() {
+    val gameStats =
+
+    while (true) {
+        println("Score: ${gameStats.score}, time: ${gameStats.timePlayed}")
+        sleep(1000)
+
+        gameStats.timePlayed += 1
+        gameStats.score += 2
+    }
+}

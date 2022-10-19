@@ -58,7 +58,7 @@ dependencies {
     compile("com.anysolo:toyGraphics:dev-v2-0.2.8")
     implementation("com.anysolo:lib-student:0.5.0.11")
 
-    compile("com.anysolo:prg-b1-course-solutions:0.3.3.14") {
+    compile("com.anysolo:prg-b1-course-solutions:0.3.3.15") {
         exclude("com.anysolo", "toyGraphics")
         exclude("com.anysolo", "lib-student")
     }
