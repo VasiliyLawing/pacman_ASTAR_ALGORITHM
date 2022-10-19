@@ -34,8 +34,9 @@ fun main() {
             // exit from the loop if key 'Q' was pressed.
             // 'Q' is a Character, key.code is an Integer. So we need to convert 'Q' to an Integer
             // before we can compare it with key.code
-            if (key.code == 'Q'.toInt())
+            if (key.code == 'Q'.toInt()) {
                 break // "break" stop the current loop and executes the next line after the end of the loop
+            }
         }
 
         val gc = Graphics(wnd)
@@ -48,8 +49,9 @@ fun main() {
 
         gc.close()
 
-        if(x <= 0 || x >= wnd.width)
+        if(x <= 0 || x >= wnd.width) {
             speed = -speed
+        }
 
         x += speed
 

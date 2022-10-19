@@ -43,10 +43,12 @@ fun main() {
         val gc = Graphics(wnd)
         gc.clear()
 
-        if(x < leftLimit || x > rightLimit)
+        if(x < leftLimit || x > rightLimit) {
             gc.color = Pal16.red
-        else
+        }
+        else {
             gc.color = Pal16.blue
+        }
 
         gc.drawRect(x, y, 10,10, fill = true)
         x --

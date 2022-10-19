@@ -31,10 +31,12 @@ fun main() {
         // Loop the motion
         // "if" here executes only one of two lines of code.
         // If the given condition is true it executes the first line otherwise the second one.
-        if(x < wnd.width)
-            x ++ // Kotlin executes this line of code if x is less than wnd.innerWidth
-        else
+        if(x < wnd.width) {
+            x++ // Kotlin executes this line of code if x is less than wnd.innerWidth
+        }
+        else {
             x = 0 // Otherwise Kotlin executes this line
+        }
 
         sleep(5)
     }

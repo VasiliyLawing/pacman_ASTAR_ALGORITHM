@@ -23,18 +23,22 @@ fun main() {
 
         // Use {} block to conditionally execute many lines of code
         if(key != null) {
-            if (key.code == 'Q'.toInt())
+            if (key.code == 'Q'.toInt()) {
                 break
+            }
 
             // If you start typing "KeyCodes."
             // You see various key codes you can use
 
             // See how you can move the object pressing left and right arrows.
-            if(key.code == KeyCodes.LEFT)
-                speed --
-            else
-                if(key.code == KeyCodes.RIGHT)
-                    speed ++
+            if(key.code == KeyCodes.LEFT) {
+                speed--
+            }
+            else {
+                if (key.code == KeyCodes.RIGHT) {
+                    speed++
+                }
+            }
         }
 
         val gc = Graphics(wnd)
@@ -50,11 +54,12 @@ fun main() {
         x += speed
 
         // Loop the motion in both directions
-        if(x < 0)
+        if(x < 0) {
             x = wnd.width - 1
-
-        else if (x >= wnd.width)
+        }
+        else if (x >= wnd.width) {
             x = 0
+        }
 
         sleep(5)
     }

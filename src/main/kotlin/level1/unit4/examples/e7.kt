@@ -73,11 +73,12 @@ fun main() {
 
         x += rocketSpeed
 
-        if(x < 0)
+        if(x < 0) {
             x = wnd.width - 1
-
-        else if (x >= wnd.width)
+        }
+        else if (x >= wnd.width) {
             x = 0
+        }
 
         sleep(10)
     }
