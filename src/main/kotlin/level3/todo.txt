@@ -1,4 +1,2 @@
-examples about Char and ascii codes
 example about StringBuilder
-examples about substr and indexOf
 simple examples about joinToString and split
