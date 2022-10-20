@@ -5,9 +5,9 @@
 package level2v3.unit3.examples.e2
 
 import com.anysolo.toyGraphics.*
+import level2v3.unit3.examples.e1.Thingy
 
 // We can import class from other package
-import level2v3.unit3.examples.e1.Thingy
 
 
 // We can pass thingy to functions.
