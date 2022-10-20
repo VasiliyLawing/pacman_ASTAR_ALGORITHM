@@ -3,7 +3,6 @@
  ******************************************************************************/
 
 
-
 package level1.unit4.examples
 
 import com.anysolo.toyGraphics.Graphics
@@ -45,6 +44,6 @@ fun main() {
             rightLimit += 5
         }
 
-        sleep(10)
+        sleep(2)
     }
 }
