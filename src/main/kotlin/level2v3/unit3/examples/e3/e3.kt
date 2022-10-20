@@ -7,7 +7,6 @@ package level2v3.unit3.examples.e3
 
 private data class Pos(val x: Int, val y: Int)
 
-
 fun main() {
     // Create a variable of Pos type. Please notice, we use name of the class as a function to create
     // an object of this class.
