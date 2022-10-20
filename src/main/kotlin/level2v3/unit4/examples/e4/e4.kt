@@ -31,10 +31,10 @@ fun main() {
 
     // We can create list of any type. So we can create list of a data class.
     val thingies = listOf(
-        Thingy(0.0, 0.0, 2.0, 2.0, Pal16.red),
-        Thingy(100.0, 100.0, 1.0, 1.0, Pal16.brown),
-        Thingy(200.0, 200.0, 1.0, 1.0, Pal16.green),
-        Thingy(400.0, 400.0, 1.0, 1.0, Pal16.brightMagenta)
+        Thingy(0.0, 0.0, 1.5, 1.4, Pal16.red),
+        Thingy(100.0, 100.0, 0.9, 1.0, Pal16.brown),
+        Thingy(200.0, 200.0, 0.8, 0.8, Pal16.green),
+        Thingy(400.0, 400.0, 0.3, 0.2, Pal16.brightMagenta)
     )
 
     while (true) {
