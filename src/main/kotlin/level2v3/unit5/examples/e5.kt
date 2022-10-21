@@ -17,8 +17,9 @@ fun main() {
     )
     println(objects)
 
-    // Better and shorter way to remove some elements of the list conditionally.
+    // A shorter way to remove some elements of the list conditionally.
     // This solution is more advance and uses lambda.
+    // You can search "kotlin lambda functions"
     objects.removeIf { it.y >= 400 }
     println(objects)
 }
