@@ -14,7 +14,7 @@ private data class Thingy(var x: Int, var y: Int)
 
 
 fun main() {
-    val wnd = Window(800, 600, buffered = true)
+    val wnd = Window(800, 600, buffered = true, background = Pal16.black)
 
     val thingies = mutableListOf<Thingy>()
     val createNewEveryNFrames = 100
@@ -25,6 +25,10 @@ fun main() {
     while (true) {
         val gc = Graphics(wnd)
         gc.clear()
+
+        gc.color = Pal16.green
+        gc.setFontSize(16)
+        gc.drawText(25, 25, "Thingy counter: ${thingies.size}")
 
         gc.color = Pal16.red
         gc.drawLine(0, removeAtY, wnd.width, removeAtY)
