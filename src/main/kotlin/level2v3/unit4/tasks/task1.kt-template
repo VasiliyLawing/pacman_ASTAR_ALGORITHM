@@ -9,7 +9,7 @@ import kotlin.math.roundToInt
 private data class Thingy(val x: Double, var y: Double, var speedY: Double, val size: Int)
 
 
-fun task1() {
+fun main() {
     val wnd = Window(800, 600, buffered = true)
 
     // We can create list of any type. So we can create list of a data class.
@@ -34,5 +34,3 @@ fun task1() {
         sleep(10)
     }
 }
-
-fun main() = task1()
