@@ -43,13 +43,15 @@ private fun drawThingy(gc: Graphics, thingy: Thingy) {
 }
 
 
-private fun updateThingy(thingy: Thingy, maxY: Double, sizeIncrease: Double) {
+private fun updateThingy(thingy: Thingy, sizeIncrease: Double, accel: Double) {
     if(Random.nextInt(0, 10) == 0) {
         thingy.speedX += Random.nextDouble(-0.002, 0.002)
     }
 
     thingy.x += thingy.speedX
     thingy.y += thingy.speedY
+
+    thingy.speedY += accel
 
     thingy.size += sizeIncrease
 }
@@ -69,6 +71,15 @@ private fun createNewThingies(thingies: MutableList<Thingy>, xLimit: Int, yLimit
 }
 
 
+private fun updateThingies(thingies: MutableList<Thingy>, simulationData: SimulationData) {
+    for (thingy in thingies) {
+        updateThingy(thingy, sizeIncrease = simulationData.sizeIncrease, accel = simulationData.accel)
+    }
+
+    thingies.removeIf { it.y < simulationData.seeLevel }
+}
+
+
 private fun drawEverything(wnd: Window, simulationData: SimulationData, thingies: List<Thingy>) {
     val gc = Graphics(wnd)
     gc.clear()
@@ -84,14 +95,10 @@ private fun drawEverything(wnd: Window, simulationData: SimulationData, thingies
     )
 
     for (thingy in thingies) {
-        thingy.y += thingy.speedY
-        thingy.speedY += simulationData.accel
-
         drawThingy(gc, thingy)
-        updateThingy(thingy, wnd.height.toDouble(), simulationData.sizeIncrease)
     }
-    gc.close()
 
+    gc.close()
 }
 
 
@@ -100,7 +107,7 @@ fun main() {
     val thingies = mutableListOf<Thingy>()
 
     val simulationData = SimulationData(
-        accel = -0.00005,
+        accel = -0.0001,
         sizeIncrease = 0.002,
         bottleSize = 5,
         seeLevel = wnd.height/7
@@ -112,7 +119,7 @@ fun main() {
         }
 
         drawEverything(wnd, simulationData, thingies)
-        thingies.removeIf { it.y < simulationData.seeLevel }
+        updateThingies(thingies, simulationData)
 
         sleep(5)
     }
