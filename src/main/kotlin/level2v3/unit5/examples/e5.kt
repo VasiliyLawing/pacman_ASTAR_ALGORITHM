@@ -4,22 +4,19 @@
 
 package level2v3.unit5.examples
 
-
-// Removing some object from a list.
-
 fun main() {
-    val objects = mutableListOf(
-        SomeObject(100, 100),
-        SomeObject(100, 200),
-        SomeObject(100, 400),
-        SomeObject(100, 500),
-        SomeObject(100, 600)
-    )
-    println(objects)
+    var numbers = listOf(1, 9, 7, 2, 10, 3, 4, 8, 6, 5)
+    println(numbers)
 
-    // A shorter way to remove some elements of the list conditionally.
-    // This solution is more advance and uses lambda.
-    // You can search "kotlin lambda functions"
-    objects.removeIf { it.y >= 400 }
-    println(objects)
+    print("reassigning variable with a new filtered list: ")
+    numbers = numbers.filter { it >= 5 }
+    println(numbers)
+
+    println("Reassigning variable with sorted list: ")
+    numbers = numbers.sorted()
+    println(numbers)
+
+    println("Reassigning variable with reversed list: ")
+    numbers = numbers.reversed()
+    println(numbers)
 }

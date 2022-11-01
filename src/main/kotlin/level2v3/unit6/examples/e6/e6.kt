@@ -2,7 +2,7 @@
  * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
 
-package level2v3.unit5.examples.e6
+package level2v3.unit6.examples.e6
 
 import com.anysolo.toyGraphics.Graphics
 import com.anysolo.toyGraphics.Pal16

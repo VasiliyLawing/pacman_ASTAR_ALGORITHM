@@ -1,32 +1,39 @@
+package level2v3.unit5.examples
+
+
+import com.anysolo.toyGraphics.Color
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
+
 /*******************************************************************************
  * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
 
-package level2v3.unit5.examples
+private fun drawColors(gc: Graphics, colors: List<Color>, startY: Int, windowWidth: Int): Int {
+    val barHeight = 10
+    var y = startY
 
-
-data class SomeObject(val x: Int, val y: Int)
-
-// Removing some object from a list.
-
-fun main() {
-    val objects = mutableListOf(
-        SomeObject(100, 100),
-        SomeObject(100, 200),
-        SomeObject(100, 400),
-        SomeObject(100, 500),
-        SomeObject(100, 600)
-    )
-    println(objects)
-
-    val iterator = objects.listIterator()
-    while (iterator.hasNext()) {
-        val item = iterator.next()
-
-        if(item.y >= 400) {
-            iterator.remove()
-        }
+    for (color in colors) {
+        gc.color = color
+        gc.drawRect(0, y, windowWidth, barHeight, fill = true)
+        y += barHeight
     }
 
-    println(objects)
+    return y
+}
+
+fun main() {
+    val wnd = Window(800, 600)
+    val gc = Graphics(wnd)
+
+    var y = 0
+    y = drawColors(gc, Pal16.all.toList(), y, wnd.width)
+
+    y += 50
+    y = drawColors(gc, Pal16.all.toList().filter { it != Pal16.white && it != Pal16.brightGreen && it != Pal16.green}, y, wnd.width)
+
+    // the same but using !in / in operator to filter out colors
+    y += 50
+    drawColors(gc, Pal16.all.toList().filter { it !in listOf(Pal16.white, Pal16.brightGreen, Pal16.green) }, y, wnd.width)
 }

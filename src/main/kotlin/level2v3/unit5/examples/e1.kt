@@ -1,20 +1,22 @@
 /*******************************************************************************
- * Copyright (c) 2019-2022.  Anysolo LLC
+ * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
-
 
 package level2v3.unit5.examples
 
-
 fun main() {
-    // Mutable list allows you to add/remove list items when the program is running.
-    val l = mutableListOf(10)
-    println("We have list containing one number")
-    println(l)
+    val data1 = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val data2 = 1..9
 
-    for(n in 10 .. 50 step 10)
-        l.add(n)
+    print("List: ")
+    println(data1)
 
-    println("\nAdded a bunch of numbers")
-    println(l)
+    print("Int range: ")
+    println(data2)
+
+    print("Int range converted to a list: ")
+    println(data2.toList())
+
+    print("Are the list and int range converted to list the same? ")
+    println(data1 == data2.toList())
 }

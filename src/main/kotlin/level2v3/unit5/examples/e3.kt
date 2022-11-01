@@ -2,35 +2,23 @@
  * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
 
-
 package level2v3.unit5.examples
 
-
-// Removing elements from a list while iterating the list in a loop.
+import com.anysolo.toyGraphics.Pal16
 
 fun main() {
-    val list = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-    println(list)
+    val origNumbers = listOf(1, 9, 7, 2, 10, 3, 4, 8, 6, 5)
+    print("Original numbers: ")
+    println(origNumbers)
 
-    /*
-    // Uncomment this is you see it does not work.
-    // You cannot modify list you are going through using "for" loop.
-    for (item in list) {
-        if(item >= 3 && item <= 6) {
-            list.remove(item)
-        }
-    }
-     */
+    val sortedNumbers = origNumbers.sorted()
 
-    // This is a better way to delete current element from the list in a loop
-    val iterator = list.listIterator()
-    while (iterator.hasNext()) {
-        val item = iterator.next()
+    print("Sorted numbers: ")
+    println(sortedNumbers)
 
-        if(item >= 3 && item <= 6) {
-            iterator.remove()
-        }
-    }
+    print("Only even numbers in sorted order: ")
+    println(origNumbers.filter { it % 2 == 0 } . sorted())
 
-    println(list)
+    print("a random number from original numbers: ")
+    println(origNumbers.random())
 }

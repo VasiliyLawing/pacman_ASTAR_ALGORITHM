@@ -11,7 +11,7 @@ Demonstrates:
     - avoiding having any global variables
  */
 
-package level2v3.unit5.examples.e7
+package level2v3.unit6.examples.e7
 
 import com.anysolo.toyGraphics.*
 import kotlin.math.roundToInt
