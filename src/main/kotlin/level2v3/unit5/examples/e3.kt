@@ -19,6 +19,12 @@ fun main() {
     print("Only even numbers in sorted order: ")
     println(origNumbers.filter { it % 2 == 0 } . sorted())
 
-    print("a random number from original numbers: ")
+    print("How many odd numbers we have: ")
+    println(origNumbers.filter { it % 2 != 0 } . count())
+
+    print("The same, but shorter: ")
+    println(origNumbers.count { it % 2 != 0 } )
+
+    print("A random number from original numbers: ")
     println(origNumbers.random())
 }
