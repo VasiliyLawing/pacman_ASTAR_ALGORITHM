@@ -13,11 +13,11 @@ import kotlin.math.roundToInt
 private data class Thingy(var x: Double, var y: Double, var speedX: Double, var speedY: Double)
 
 
-private fun drawRays(gc: Graphics, targets: List<Thingy>) {
+private fun drawRays(gc: Graphics, targets: List<Thingy>, thingySize: Int) {
     gc.color = Pal16.brightRed
 
     for (t in targets) {
-        gc.drawLine(gc.window.width/2, gc.window.height, t.x.roundToInt(), t.y.roundToInt())
+        gc.drawLine(gc.window.width/2, gc.window.height, t.x.roundToInt() + thingySize/2, t.y.roundToInt() + thingySize/2)
     }
 }
 
@@ -33,6 +33,7 @@ private fun drawTargetArea(gc: Graphics, left: Int, right: Int) {
 
 fun main() {
     val wnd = Window(800, 600, buffered = true, background = Pal16.black)
+    val thingySize = 10
 
     val thingies = listOf(
         Thingy(0.0, 0.0, 1.5, 0.7),

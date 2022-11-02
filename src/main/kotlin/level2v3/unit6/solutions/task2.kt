@@ -2,9 +2,9 @@
  * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
 
-package level2v3.unit5.solutions
+package level2v3.unit6.solutions
 
-import prgb1.solutions.level2v3.unit5.task2
+import prgb1.solutions.level2v3.unit6.task2
 
 
 fun main() = task2()
