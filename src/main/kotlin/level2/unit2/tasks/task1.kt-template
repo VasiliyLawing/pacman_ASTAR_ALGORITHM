@@ -1,42 +1,53 @@
-// Create file task1.kt, copy the code bellow and make it work.
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
 
+// Implement function "limitX"
 
 package level2.unit2.tasks
 
 import com.anysolo.toyGraphics.*
 
 
-private const val amountOfRows = 21
-private const val amountOfColumns = 15
-private const val blockWidth = 75
-private const val blockHeight = 25
-private const val blockDistance = 8
+val objectSize = 10
 
 
-// Write function drawBlock here
+private fun drawBox(gc: Graphics, x: Int, y: Int) {
+    gc.color = Pal16.blue
+    gc.drawRect(x, y, objectSize, objectSize, fill = true)
+}
 
-fun level1.main() {
-    val wnd = Window(1280, 720)
-    val g = Graphics(wnd)
 
-    var row = 0
+private fun processKeyboard(keyboard: Keyboard, speed: Int): Int {
+    val key = keyboard.getPressedKey() ?: return speed
 
-    while (row < amountOfRows) {
-        var column = 0
+    return when(key.code) {
+        KeyCodes.LEFT   -> speed - 1
+        KeyCodes.RIGHT  -> speed + 1
+        else            -> speed
+    }
+}
 
-        while (column < amountOfColumns) {
-/*
-Uncomment this when you wrote drawBlock function and check how it works.
-            drawBlock(
-                g,
-                column * (blockWidth+blockDistance) + blockDistance,
-                row * (blockHeight+blockDistance) + blockDistance
-            )
-*/
 
-            column++
-        }
+fun main() {
+    val wnd = Window(800, 600, buffered = true)
+    val keyboard = Keyboard(wnd)
 
-        row++
+    var x = wnd.width/2
+    val y = wnd.height/2
+    var xspeed = 0
+
+    while (true) {
+        xspeed = processKeyboard(keyboard, xspeed)
+
+        val gc = Graphics(wnd)
+        gc.clear()
+        drawBox(gc, x, y)
+        gc.close()
+
+        sleep(5)
+
+        x += xspeed
+        x = limitX(x,wnd.width - objectSize)
     }
 }

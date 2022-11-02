@@ -1,9 +1,0 @@
-Write a function "isPrimeNumber" which takes an integer numbers
- and returns true if the number is a prime number otherwise false.
-
-Test you function like this:
-import prgb1.solutions.level2v2.unit1.tests.testTask2
-
-fun main() {
-    testTask2(::isPrimeNumber)
-}

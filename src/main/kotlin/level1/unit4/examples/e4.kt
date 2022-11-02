@@ -23,7 +23,7 @@ fun main() {
 
         // Use {} block to conditionally execute many lines of code
         if(key != null) {
-            if (key.code == 'Q'.toInt()) {
+            if (key.code == 'Q'.code) {
                 break
             }
 

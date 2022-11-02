@@ -34,7 +34,7 @@ fun main() {
             // exit from the loop if key 'Q' was pressed.
             // 'Q' is a Character, key.code is an Integer. So we need to convert 'Q' to an Integer
             // before we can compare it with key.code
-            if (key.code == 'Q'.toInt()) {
+            if (key.code == 'Q'.code) {
                 break // "break" stop the current loop and executes the next line after the end of the loop
             }
         }

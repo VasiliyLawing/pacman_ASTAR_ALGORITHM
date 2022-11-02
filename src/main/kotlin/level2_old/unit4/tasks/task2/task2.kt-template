@@ -1,0 +1,27 @@
+package level2_old.unit4.tasks.task1
+
+
+// You have to write function myRepeat which works
+// exactly like usual Kotlin repeat loop.
+
+// --------------------------
+// Write your code between these two lines. Do not change any code outside it.
+// --------------------------
+
+
+fun main() {
+    var n = 0
+
+    myRepeat(5) {
+        n++
+    }
+
+    run {
+        val expected = 5
+
+        if (n == expected)
+            println("passed.")
+        else
+            println("Failed.\nExpected: $expected\nYou made: $n")
+    }
+}

@@ -1,8 +1,0 @@
-Write function "avrOfList" which takes a list of Int and returns average of all numbers
-
-Test you function like this:
-import prgb1.solutions.level2v2.unit2.tests.testTask2
-
-fun main() {
-    testTask2(::avrOfList)
-}

@@ -5,11 +5,13 @@
 
 package level2.unit4.examples
 
-
 fun main() {
-    // Declare a variable containing a lambda function with one argument.
-    val lambda = { a: Int -> a * 10}
+    // You can have an empty list
+    // Here you have a list of integer number which contains zero numbers.
+    // Sometimes in is useful.
+    val l1 = emptyList<Int>()
 
-    println(lambda(3))
-    println(lambda(5))
+    println("# Empty list of Int numbers")
+    println(l1)
+    println(l1.size)
 }

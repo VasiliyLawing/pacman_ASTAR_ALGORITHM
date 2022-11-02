@@ -1,49 +1,23 @@
 /*******************************************************************************
- * Copyright (c) 2019-2022.  Anysolo LLC
+ * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
-
 
 package level2.unit1.examples
 
 
-/*
-Each variable has visibility scope.
-This example shows you variables visible inside one function or inside one file.
-If you remove "private" from "val b = 1000" variable will be visible inside the whole project.
-You always should limit visibility of everything as much as you can.
- */
-
-
-// This variable is visible from all functions inside this file
-private val b = 1000
-
-
-private fun myFunc1() {
-    // variable "a" visible only in this function
-    val a = 1 + 2
-
-    println("MyFunc1 a=$a")
-    println("MyFunc1 b=$b")
-    println()
+// It is a function. It contains a bunch of code and it has a name.
+private fun sayHello(name: String) {
+    println("Hello $name")
 }
 
-private fun myFunc2() {
-    // variable "a" visible only in this function
-    val a = 3 + 4
+fun main() {
+    println("Calling functions example")
 
-    println("MyFunc2 a=$a")
-    println("MyFunc2 b=$b")
-    println()
-}
+    // we cal execute the code we have in the function like this. It is called a function call
+    sayHello("John")
 
+    println("Doing something in between")
 
-private fun main() {
-    // variable "a" visible only in this function
-    val a = 10
-
-    myFunc1()
-    myFunc2()
-
-    println("main a=$a")
-    println("main b=$b")
+    // Calling the same function again
+    sayHello("Lazarus")
 }

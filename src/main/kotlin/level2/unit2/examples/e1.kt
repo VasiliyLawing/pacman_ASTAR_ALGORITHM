@@ -1,34 +1,30 @@
 /*******************************************************************************
- * Copyright (c) 2019-2022.  Anysolo LLC
+ * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
-
 
 package level2.unit2.examples
 
+// Type inference and explicit type specification
 
-// Create our own data type/class containing x,y coordinates in form of two Ints
-data class Pos(val x: Int, val y: Int)
+fun someMathFunc(): Double {
+    return 3.14
+}
 
 
 fun main() {
-    // Create a variable of Pos type
-    val playerPos = Pos(300,600)
+    // full form of creating a variable
+    // ": Int" - is explicit specification of th
+    val n: Int = 1
 
-    // Print it just for debugging porpoise.
-    println("#1")
-    println(playerPos)
+    // The next line will be an error. We assign a Double to an Int variable
+    // val n2: Int = 1.0
 
-    // You can access x and y separately
-    println("#2")
-    println("${playerPos.x}, ${playerPos.y}")
+    // This variable is a Double, Kotlin infers it automatically
+    val n3 = someMathFunc()
 
-    // You can have as many variables of that type as you want
-    val enemyPos = Pos(100, 0)
-    println("#3")
-    println("playerPos=$playerPos, enemyPos=$enemyPos")
+    // This variable is a Double, Kotlin infers it automatically
+    val n4: Double = someMathFunc()
 
-    val playerPos2 = Pos(300,600)
-    val playerPos3 = Pos(300,601)
-    println("playerPos == playerPos2: ${playerPos == playerPos2}")
-    println("playerPos2 == playerPos3: ${playerPos2 == playerPos3}")
+    // This would be an error
+    // val n5: Int = someMathFunc()
 }

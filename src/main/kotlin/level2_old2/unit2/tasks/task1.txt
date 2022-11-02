@@ -1,0 +1,8 @@
+Write function "sumOfList" which takes a list of Int and returns sum of all numbers
+
+Test you function like this:
+import prgb1.solutions.level2_old2.unit2.tests.testTask1
+
+fun main() {
+    testTask1(::sumOfList)
+}

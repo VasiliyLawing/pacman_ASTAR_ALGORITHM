@@ -1,0 +1,29 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
+package level2.unit1.tasks
+
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
+
+
+private fun drawBox(gc: Graphics, x: Int, y: Int, size: Int) {
+    // write your code here
+}
+
+fun main() {
+    val wnd = Window(800, 600)
+    val gc = Graphics(wnd)
+
+    val step = 50
+    val y = wnd.height/2
+
+    var size = 1
+    for (x in step .. wnd.width step step) {
+        drawBox(gc, x, y, size)
+        size += 2
+    }
+}

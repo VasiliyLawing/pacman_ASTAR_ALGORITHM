@@ -1,32 +1,120 @@
-// Create file task2.kt, copy the code bellow and make it work.
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
 
+
+// Implement functions detectHit and isTimeToShoot
 
 package level2.unit2.tasks
 
 import com.anysolo.toyGraphics.*
+import kotlin.math.roundToInt
+import kotlin.random.Random
 
 
-private const val amountOfRows = 21
-private const val amountOfColumns = 15
-private const val blockWidth = 75
-private const val blockHeight = 25
-private const val blockDistance = 8
+val enemyWidth = 20
+val enemyHeight = 10
+val gunWidth = 40
+val gunHeight = 20
+val bulletSize = 5
 
 
-/*
- Write functions drawBlock and calcBlockPosition here
-*/
+private fun drawBox(gc: Graphics, x: Int, y: Int) {
+    gc.color = Pal16.blue
+    gc.drawRect(x, y, enemyWidth, enemyHeight, fill = true)
+}
 
 
-fun level1.main() {
-    val wnd = Window(1280, 720)
-    val g = Graphics(wnd)
+private fun drawBullet(gc: Graphics, x: Int, y: Int) {
+    gc.color = Pal16.blue
+    gc.drawRect(x, y, bulletSize, bulletSize, fill = true)
+}
 
-/*
-Uncomment this when you wrote missing functions and check how it works.
-    for (row in 0 until  amountOfRows)
-        for (column in 0 until  amountOfColumns)
-            drawBlock(g, calcBlockPosition(column, row))
 
- */
+private fun drawGun(gc: Graphics, x: Int, y: Int) {
+    gc.color = Pal16.green
+    gc.drawRect(x, y, gunWidth, gunHeight, fill = true)
+}
+
+private fun drawScore(gc: Graphics, score: Int, shootsFired: Int, shootsMissed: Int) {
+    gc.setFontSize(20)
+    gc.color = Pal16.green
+    gc.drawText(20, 20, "Score: $score, shootFired: $shootsFired, shootsMissed: $shootsMissed")
+}
+
+
+private fun calcScore(firedCounter: Int, hitCounter: Int): Int {
+    return (firedCounter.toDouble() / (1 + hitCounter)).roundToInt() * 100
+}
+
+
+fun main() {
+    val wnd = Window(800, 600, buffered = true)
+
+    var enemyX = 0.0
+    val enemyY = wnd.height/10.0
+    val baseEnemySpeed = 0.1
+    var enemySpeed = baseEnemySpeed
+
+    val gunX = wnd.width/2.0 - gunWidth/2
+    val gunY = wnd.height.toDouble() - gunHeight
+
+    val bulletX = wnd.width/2.0
+    val bulletInitialY = wnd.height.toDouble() - bulletSize
+    var bulletY = 0.0
+    val bulletSpeed = 1.0
+    var bulletIsFlying = false
+    var enemyToReset = false
+
+    var hitCounter = 0
+    var missCounter = 0
+    var shootFiredCounter = 0
+
+    while (true) {
+        val gc = Graphics(wnd)
+        gc.clear()
+
+        drawBox(gc, enemyX.roundToInt(), enemyY.roundToInt())
+        drawGun(gc, gunX.roundToInt(), gunY.roundToInt())
+        drawScore(gc, calcScore(shootFiredCounter, hitCounter), shootFiredCounter, missCounter)
+
+        if(bulletIsFlying) {
+            drawBullet(gc, bulletX.roundToInt(), bulletY.roundToInt())
+            bulletY -= bulletSpeed
+
+            if(detectHit(enemyX, enemyY, bulletX, bulletY)) {
+                hitCounter ++
+                bulletIsFlying = false
+                enemyToReset = true
+            }
+
+            if(bulletY < 0) {
+                bulletIsFlying = false
+            }
+        } else {
+            if(isTimeToShoot(enemyX, enemyY, gunX, gunY, enemySpeed, bulletSpeed)) {
+                bulletIsFlying = true
+                bulletY = bulletInitialY
+                shootFiredCounter ++
+            }
+        }
+
+        gc.close()
+
+        sleep(2)
+
+        if(enemyX > wnd.width - enemyWidth) {
+            enemyToReset = true
+            missCounter ++
+        }
+
+        if(enemyToReset) {
+            enemyX = 0.0
+            enemySpeed = baseEnemySpeed * Random.nextDouble(0.25, 4.0)
+            println("Enemy speed: $enemySpeed")
+            enemyToReset = false
+        }
+
+        enemyX += enemySpeed
+    }
 }

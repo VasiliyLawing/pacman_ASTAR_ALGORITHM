@@ -1,0 +1,36 @@
+// Complete this code to work as in the solution.
+
+
+package level2.unit4.tasks
+
+import com.anysolo.toyGraphics.*
+import kotlin.math.roundToInt
+
+private data class Thingy(val x: Double, var y: Double, var speedY: Double, val size: Int)
+
+
+fun main() {
+    val wnd = Window(800, 600, buffered = true)
+
+    // We can create list of any type. So we can create list of a data class.
+    val thingies = listOf(
+        Thingy(100.0, 0.0, 1.0, 10),
+        Thingy(200.0, 0.0, 0.5, 15),
+        Thingy(300.0, 0.0, 1.5, 30),
+        Thingy(600.0, 0.0, 1.0, 20)
+    )
+
+    while (true) {
+        val gc = Graphics(wnd)
+        gc.clear()
+
+        for (thingy in thingies) {
+            drawThingy(gc, thingy)
+            moveThingy(thingy, wnd.height.toDouble())
+        }
+
+        gc.close()
+
+        sleep(10)
+    }
+}

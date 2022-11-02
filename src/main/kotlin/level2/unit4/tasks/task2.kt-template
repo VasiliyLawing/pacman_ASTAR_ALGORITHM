@@ -1,0 +1,45 @@
+// Complete this code to work as in the solution.
+
+package level2.unit4.tasks
+
+import com.anysolo.toyGraphics.*
+import kotlin.math.roundToInt
+import kotlin.random.Random
+
+
+private data class Ufo(var x: Double, var speedX: Double)
+
+
+
+fun main() {
+    val wnd = Window(800, 600, buffered = true)
+    val ufoImage = Image("graphicsFiles/ufo-small.png")
+    val ufoY = 10
+
+
+    // We can create list of any type. So we can create list of a data class.
+    val ufos = listOf(
+        Ufo(0.0, 0.1),
+        Ufo(0.0, 0.3),
+        Ufo(wnd.width.toDouble() - ufoImage.width - 1, -0.1),
+        Ufo(wnd.width.toDouble() - ufoImage.width - 1, -0.3),
+    )
+
+    while (true) {
+        for (ufo in ufos) {
+            ufoAi(ufo)
+        }
+
+        val gc = Graphics(wnd)
+        gc.clear()
+
+        for (ufo in ufos) {
+            drawUfo(gc, ufo,ufoY, ufoImage)
+            moveUfo(ufo, maxX = wnd.width.toDouble(), ufoSize = ufoImage.width)
+        }
+
+        gc.close()
+
+        sleep(10)
+    }
+}

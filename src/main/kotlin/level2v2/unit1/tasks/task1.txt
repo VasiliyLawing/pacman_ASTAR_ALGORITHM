@@ -1,9 +1,0 @@
-Write a function "myMul" which takes two positive integer numbers(n1, n2) and returns n1*n2
-without using * or / operations
-
-Test you function like this:
-import prgb1.solutions.level2v2.unit1.tests.testTask1
-
-fun main() {
-    testTask1(::myMul)
-}

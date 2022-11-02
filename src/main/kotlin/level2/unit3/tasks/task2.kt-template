@@ -1,0 +1,31 @@
+package level2.unit3.tasks
+
+import com.anysolo.toyGraphics.*
+
+
+data class Thingy(var x: Int, var y: Int, var speedX: Int, var speedY: Int, val size: Int, val color: Color)
+
+
+fun main() {
+    val wnd = Window(800, 600, buffered = true)
+
+    val thingy1 = Thingy(0, 0, 1, 1, 10, Pal16.red)
+
+    val thingy2Size = 20
+    val thingy2 = Thingy(wnd.width-thingy2Size, wnd.height-thingy2Size, -1, -1, thingy2Size, Pal16.blue)
+
+    while (true) {
+        val gc = Graphics(wnd)
+        gc.clear()
+
+        drawThingy(gc, thingy1)
+        drawThingy(gc, thingy2)
+
+        moveThingy(thingy1)
+        moveThingy(thingy2)
+
+        gc.close()
+
+        sleep(10)
+    }
+}

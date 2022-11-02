@@ -26,7 +26,7 @@ fun main() {
         if(key != null) {
             // You use "when" to make complex conditions clean and simple
             when(key.code) {
-                'Q'.toInt() ->
+                'Q'.code ->
                     needToExit = true
 
                 KeyCodes.LEFT ->

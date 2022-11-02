@@ -1,0 +1,25 @@
+/*******************************************************************************
+ * Copyright (c) 2019-2022.  Anysolo LLC
+ ******************************************************************************/
+
+
+package level2_old.unit1.examples
+
+
+// You can write a block of code and give it a name
+// This will be a function
+private fun printLine() {
+    println("-----------------------------------------------------------")
+}
+
+
+// You can use this function many times in different places
+private fun main() {
+    // You call function writing its name followed by  "()"
+    printLine()
+    println("something between lines")
+    println("some more")
+    printLine()
+}
+
+// BTW, println is also a function.

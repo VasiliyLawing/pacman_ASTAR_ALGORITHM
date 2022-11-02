@@ -1,35 +1,47 @@
 /*******************************************************************************
- * Copyright (c) 2019-2022.  Anysolo LLC
+ * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
-
 
 package level2.unit1.examples
 
+import com.anysolo.toyGraphics.Graphics
+import com.anysolo.toyGraphics.Pal16
+import com.anysolo.toyGraphics.Window
+import com.anysolo.toyGraphics.sleep
 
-private val a = 1000
+
+private val tankLength = 100
+private val tankHeight = 50
 
 
-private fun myFunc1() {
-    // There is no local variable "a" but more global is visible
-    println("MyFunc1 a=$a")
-    println()
+private fun drawTank(g: Graphics, x: Int, y: Int) {
+    g.color = Pal16.black
+    g.setStrokeWidth(2)
+
+    g.drawRect(x + tankLength /4, y, tankLength /2, tankHeight /2)
+    g.drawRect(x, y + tankHeight /2, tankLength, tankHeight /2)
+
+    g.setStrokeWidth(4)
+    g.drawLine(x - tankLength /8, y+ tankHeight /4, x + tankLength /4, y+ tankHeight /4)
 }
 
-private fun myFunc2() {
-    // More local variable "a" shadows more global "a"
-    val a = 3 + 4
 
-    println("MyFunc2 a=$a")
-    println()
-}
+fun main() {
+    val wnd = Window(800, 600, buffered = true)
 
+    var tankX = wnd.width - tankLength
+    val tankY = wnd.height/2
 
-private fun main() {
-    // More local variable "a" shadows more global "a"
-    val a = 10
+    while (true) {
+        val graphics = Graphics(wnd)
+        graphics.clear()
 
-    myFunc1()
-    myFunc2()
+        drawTank(graphics, tankX, tankY)
 
-    println("main a=$a")
+        graphics.close()
+
+        tankX --
+
+        sleep(10)
+    }
 }

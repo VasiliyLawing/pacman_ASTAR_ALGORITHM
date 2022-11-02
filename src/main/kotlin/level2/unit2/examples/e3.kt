@@ -1,28 +1,27 @@
 /*******************************************************************************
- * Copyright (c) 2019-2022.  Anysolo LLC
+ * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
-
 
 package level2.unit2.examples
 
-import com.anysolo.toyGraphics.Graphics
-import com.anysolo.toyGraphics.Window
+import kotlin.math.PI
+import kotlin.math.roundToInt
+
+// Here we pass result of one function into another function
+
+private fun calcCircle(radius: Double): Double {
+
+    // You also need to return the result when program is working.
+    return PI * radius * radius
+}
 
 
-/*
-We can use function drawTank defined in e2 because it is in the same package.
-We use it as a graphic primitive and draw as much tanks as we want.
- */
+private fun printFancy(number: Int) {
+    println("***************")
+    println(number)
+    println("***************")
+}
 
 fun main() {
-    val wnd = Window(1280, 720)
-    val g = Graphics(wnd)
-
-    var tankPos = Pos(100, 50)
-
-    repeat(8) {
-        drawTank(g, tankPos)
-        tankPos = Pos(tankPos.x + 100, tankPos.y + 75)
-
-    }
+    printFancy(calcCircle(2.0).roundToInt())
 }

@@ -34,7 +34,7 @@ fun main() {
 
         if(key != null) {
             when(key.code) {
-                'Q'.toInt() ->
+                'Q'.code ->
                     needToExit = true
 
 // NEW -------------------------
