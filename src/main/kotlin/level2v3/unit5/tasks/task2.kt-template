@@ -2,7 +2,7 @@
  * Copyright (c) 2022.  Anysolo LLC
  ******************************************************************************/
 
-// Complete this program. Check the solution.
+// Complete this program. Check the solution. Look for "todo" in the code.
 
 package level2v3.unit5.tasks
 
@@ -58,7 +58,7 @@ fun main() {
             thingy.y += thingy.speedY
         }
 
-        // call drawRays function here. Pass all thingies with x between targetAreaLeft and targetAreaRight as argument
+        // todo call drawRays function here. Pass all thingies with x between targetAreaLeft and targetAreaRight as argument
 
         gc.close()
 

@@ -1,3 +1,5 @@
+// Complete the program. Check the solution. Look for "todo" in the code.
+
 package level2v3.unit6.tasks
 
 import com.anysolo.toyGraphics.*
@@ -76,8 +78,8 @@ fun task2() {
         drawTargetArea(gc, targetAreaLeft)
 
         // todo select thingies with x > targetAreaLeft
-        val targetedThingies = 
-            
+        val targetedThingies =
+
         drawRays(gc, targetedThingies, thingySize, platformX + platformWidth/2, platformY)
         drawPlatform(gc, platformX, platformY, platformWidth, platformHeight)
 
