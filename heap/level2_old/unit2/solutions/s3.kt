@@ -3,11 +3,11 @@
  ******************************************************************************/
 
 
-package level2_old.unit1.solutions
+package level2_old.unit2.solutions
 
-import prgb1.solutions.level2.unit1.task5
+import prgb1.solutions.level2_old.unit2.task3.task3
 
 
 fun main() {
-    task5()
+    task3()
 }

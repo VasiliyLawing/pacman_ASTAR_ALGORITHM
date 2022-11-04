@@ -4,7 +4,7 @@
 
 
 package level2.unit3.solutions
-import prgb1.solutions.level2v3.unit3.task1
+import prgb1.solutions.level2.unit3.task1
 
 
 fun main() {
