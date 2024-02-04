@@ -1,6 +1,0 @@
-Read at least "Scope and naming" on this page:
-    https://kotlinlang.org/docs/tutorials/kotlin-for-py/declaring-variables.html
-
-google:
-    "kotlin for loop"
-    "kotlin int range"

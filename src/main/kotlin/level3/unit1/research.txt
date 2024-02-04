@@ -1,4 +1,0 @@
-Search and read about following Kotlin String class functions:
-endsWith, startsWith, indexOf, substring
-
-Kotlin class Pair and how to use it with "to"

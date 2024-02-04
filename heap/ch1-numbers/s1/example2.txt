@@ -1,4 +1,0 @@
-Reading:
-    google:
-      "floating point numbers"
-      "integer numbers"

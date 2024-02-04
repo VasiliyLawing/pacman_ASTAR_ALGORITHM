@@ -1,9 +1,0 @@
-2 3 +
-5 *
-15 save
-1 2 +
-printStack
-15 load
-printStack
-*
-print

@@ -1,3 +1,0 @@
-google:
-    "kotlin variables"
-    "programming what is keywords"

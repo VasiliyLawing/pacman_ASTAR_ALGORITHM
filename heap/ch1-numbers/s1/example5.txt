@@ -1,4 +1,0 @@
-google:
-    "kotlin logical operators"
-    "kotlin while loop"
-    "kotlin while examples"
